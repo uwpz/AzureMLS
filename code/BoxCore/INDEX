@@ -1,0 +1,65 @@
+BoxCore-package         BoxCore package
+arrange_plots           Arrange ggplots in grid
+calc_corr               Calculate Correlation/Contingency Matrix
+calc_gengap             Calcualate Generalization Gap
+calc_learningcurve      Calculate Learning Curve
+calc_partial_dependencies
+                        Calculate partial dependance
+calc_simulation         Run Simulation
+calc_target_refs        Calculate target reference values
+calc_varimp_by_permutation
+                        Calculate feature importances
+calc_xgb_explainer      Calculate XGBoost Explainer Data
+calc_xgb_weights        Calculate XGBoost Weights
+cate_encoding           Generate Encoding for Categorical Features
+check_feature_scale     Check feature scale
+check_same_feature_scales
+                        Check for identical feature scales
+check_target_type       Check target type
+clip_matrix             Clip Matrix
+cluster_matrix          Cluster Matrix
+convert_scale           Convert scale level
+create_folds            Create Folds for Cross Validation
+detect_caret_predict_type
+                        Detect Caret Predict Type
+detect_feature_scale    Detect feature scale
+detect_target_type      Detect target scale
+encode                  Encode Feature Values
+impute                  Impute missing values
+layout_matrix_rowwise   Rowwise layout matrix for 'marrangeGrob'
+level_ratio             Level ratio
+levels_to_extract       Levels to extract
+missing_ratio           Missing ratio
+model_matrix            Create Model Matrix
+performance_summary     Custom prediction performance function
+plot_all_partial_dependencies
+                        Plot all partial dependencies
+plot_all_performances   Plot all performance plots
+plot_all_xgb_explanations
+                        Plot XGBoost Explanations for All Entries
+plot_caret_result       Plot Caret Result
+plot_corr               Correlation plot
+plot_distr              Plot distribution
+plot_gengap             Plot Generalization Gap
+plot_learningcurve      Plot Learning Curve
+plot_partial_dependency
+                        Plot partial dependency
+plot_partial_dependency_cate
+                        Plot partial dependency of categorical features
+plot_partial_dependency_metr
+                        Plot partial dependency of metric features
+plot_residuals          Residual plot
+plot_simulation         Plot Simulation
+plot_varimp             Plot feature importances
+plot_varimp_cum         Plot cumulative feature importances
+plot_xgb_explanations   Plot XGBoost Explanations for Single Entry
+prepare_df_partialdep   Prepare Data Frame of Parital Dependencies
+prepare_xgb_explanations
+                        Prepare XGBoost Explanations
+remove_blank_page       Remove first blank page
+remove_rows_with_missings
+                        Remove missings from XY
+scale_predictions       Scale Predictions
+stat_mode               Statistical mode
+undersample_n           Undersample target
+winsorize               Winsorize

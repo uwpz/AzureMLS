@@ -1,0 +1,85 @@
+default:
+  paths: # input/output
+    data:   &data_path   "inst/extdata"
+    output: &output_path "vignettes/output"
+  data: # input
+    path: *data_path
+    file: "df_100k.psv"
+    #file: "fd_abt_wt2_training_4_1.csv"
+    read_args:
+      delim: "|"
+  metadata: # input
+    input:
+      path: *data_path
+      file: "datamodel.xlsx"
+    output:
+      path: *data_path
+      file: "metadata.rds"
+  vars:
+    suffix:
+      binned: "_BINNED_" # metr
+      log:    "_LOG_" # metr
+    to_log: NULL
+    to_remove: NULL
+    ordi:
+      - "dep_month"
+      - "arr_month"
+      - "dep_calendarweek"
+      - "arr_calendarweek"
+      - "dep_day_of_month"
+      - "arr_day_of_month"
+      - "dep_hour_of_day"
+      - "arr_hour_of_day"
+      - "dep_mean_visibility_threshold"
+      - "arr_mean_visibility_threshold"
+      - "dep_max_visibility_threshold"
+      - "arr_max_visibility_threshold"
+      - "dep_min_visibility_threshold"
+      - "arr_min_visibility_threshold"
+      - "dep_mean_cloud_height_threshold"
+      - "arr_mean_cloud_height_threshold"
+      - "dep_max_cloud_height_threshold"
+      - "arr_max_cloud_height_threshold"
+      - "dep_min_cloud_height_threshold"
+      - "arr_min_cloud_height_threshold"
+      - "number_of_seats_first_class"
+      - "number_of_seats_business"
+      - "number_of_seats_economy"
+      - "number_of_seats_business_first_class"
+      - "number_of_seats"
+      - "dep_precipitation"
+      - "arr_precipitation"
+      - "dep_wind_speed_max"
+      - "arr_wind_speed_max"
+  prepare:
+    missing:
+      threshold: 0.999
+      prefix: "MISS_"
+      level: "(Missing)"
+    impute:
+      metr: "random"
+      nomi: "random"
+      ordi: "random"
+    metr: NULL
+    ordi: NULL
+    nomi:
+      nlevels_threshold: 20
+  predict:
+    target:
+      name: "dep_target"
+      type: "multiclass"
+      minority_level: "L_0"
+  flag:
+    verbose:     FALSE
+    print_plots: TRUE
+  plots:
+    distr_metr:
+      ncol: 3
+      nrow: 2
+      scale: 1.0
+  regr:
+    cutoff: 0.9
+  class:
+    cutoff: 0.9
+  multiclass:
+    cutoff: 0.1

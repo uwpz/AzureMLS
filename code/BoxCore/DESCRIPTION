@@ -1,0 +1,25 @@
+Package: BoxCore
+Type: Package
+Title: MunichRe Box
+Version: 1.1
+Author: Arno Becker [aut, cre], Uwe Pritzsche [ctb]
+Maintainer: Arno Becker <arno.becker@analytical-software.de>
+Author@R: c( person( "Arno", "Becker", email =
+        "arno.becker@analytical-software.de", role = c("aut", "cre")),
+        person( "Uwe", "Pritzsche", email =
+        "uwe.pritzsche@analytical-software.de", role = c("ctb")) )
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
+Depends: R (>= 3.3.0)
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+Imports: magrittr, readr, utf8, dplyr, forcats, purrr, stringr,
+        ggplot2, gridExtra, hexbin, config, readxl, tidyr, corrplot,
+        d3heatmap, vcd, doParallel, foreach, iterators, parallel,
+        waterfalls, caret, glmnet, gbm, randomForest
+Suggests: devtools, roxygen2, testthat, knitr, rmarkdown
+VignetteBuilder: knitr
+RoxygenNote: 6.0.1
+ByteCompile: true
+Built: R 3.3.0; ; 2019-02-01 22:54:37 UTC; windows

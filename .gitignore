@@ -1,0 +1,5 @@
+.idea/
+venv/
+condaenv/
+code/__pycache__
+.Rproj.user
