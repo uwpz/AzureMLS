@@ -31,6 +31,47 @@ with open("code/conda_file.yml", "w") as file:
     file.write(env.serialize_to_string())
 print(env.serialize_to_string())
 
+'''
+# DOES NOT WORK
+# Create Basis container
+tmp = os.getcwd()
+try:
+    os.chdir(tmp + "/code")
+    image_config = ContainerImage.image_configuration(
+        execution_script="dummy.py",  # must be in cwd
+        runtime="python",
+        conda_file="conda_file.yml",
+        docker_file="docker_file",
+        dependencies=["init.py"] if backend == "python" else ["install_package.R", "hmsPM"])
+    image = ContainerImage.create(workspace=ws,
+                                  name="base-image",
+                                  models=[],
+                                  image_config=image_config)
+    image.wait_for_creation(show_output=True)
+    os.chdir(tmp)
+except Exception as e:
+    os.chdir(tmp)
+    print(e)
+    
+# Create container image
+tmp = os.getcwd()
+try:
+    os.chdir(tmp + "/code")
+    image_config = ContainerImage.image_configuration(
+        execution_script="score_model.py" if backend == "python" else "score_R_model.py",  # must be in cwd
+        runtime="python",
+        base_image="mlservice2042829589.azurecr.io/base-image:1")
+    image = ContainerImage.create(workspace=ws,
+                                  name="titanic-image-new",
+                                  models=[model],
+                                  image_config=image_config)
+    image.wait_for_creation(show_output=True)
+    os.chdir(tmp)
+except Exception as e:
+    os.chdir(tmp)
+    print(e)
+'''
+
 # Create container image
 tmp = os.getcwd()
 try:
@@ -46,6 +87,7 @@ try:
                                   models=[model],
                                   image_config=image_config)
     image.wait_for_creation(show_output=True)
+    print(image.image_build_log_uri)
     os.chdir(tmp)
 except Exception as e:
     os.chdir(tmp)

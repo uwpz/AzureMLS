@@ -3,6 +3,7 @@ from azureml.core.model import Model
 import rpy2.rinterface
 import rpy2.robjects as robjects
 import os
+# robjects.r("version")
 
 test_local = False  # for local test
 
