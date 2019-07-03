@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Run Simulation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for calc_simulation {hmsPM}"><tr><td>calc_simulation {hmsPM}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Run Simulation</h2>
+
+<h3>Description</h3>
+
+<p>Run Simulation
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+calc_simulation(df_data, n_sim = 5, metric, sample_frac_train = 0.5,
+  sample_frac_test = 0.5, l_methods)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>df_data</code></td>
+<td>
+<p>Data frame for caret fit. Must contain variable
+&quot;fold&quot; with members &quot;train&quot; and &quot;test&quot;.</p>
+</td></tr>
+<tr valign="top"><td><code>n_sim</code></td>
+<td>
+<p>Number of simulations to run.</p>
+</td></tr>
+<tr valign="top"><td><code>metric</code></td>
+<td>
+<p>Tuning metric.</p>
+</td></tr>
+<tr valign="top"><td><code>sample_frac_train</code></td>
+<td>
+<p>Fraction of training data to be sampled in each run.</p>
+</td></tr>
+<tr valign="top"><td><code>sample_frac_test</code></td>
+<td>
+<p>Fraction of test data to be sampled in each run.</p>
+</td></tr>
+<tr valign="top"><td><code>l_methods</code></td>
+<td>
+<p>List of methods. Each method itself is represented
+by a named list comprising the elements method, formula_string, sparse, and
+tune_grid.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Data frame with simulation results.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>Other simulation functions: <code><a href="plot_simulation.html">plot_simulation</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+TODO
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>hmsPM</em> version 1.0.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

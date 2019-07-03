@@ -1,0 +1,2 @@
+curl -d "@records.json" --header "Content-type: application/json" -X POST http://5bad0f2a-29d1-4443-8bef-4181dc7a3e63.westeurope.azurecontainer.io/score
+

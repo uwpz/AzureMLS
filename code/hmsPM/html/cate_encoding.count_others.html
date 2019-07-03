@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Count Encoding of Other Values</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for cate_encoding.count_others {hmsPM}"><tr><td>cate_encoding.count_others {hmsPM}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Count Encoding of Other Values</h2>
+
+<h3>Description</h3>
+
+<p>Count encoding for remaining levels of <code>self_topn</code>-encoding. All
+<code>n_top_levels</code> are encoded to the value <code>n_levels-n_top_levels+1</code>,
+all remaining levels are numerated (count encoded) according to their
+frequency in (by default) decreasing order starting at 1.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+cate_encoding.count_others(x, n_top_levels = 20, decreasing = TRUE,
+  enc_nas = TRUE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>Feature values to be encoded.</p>
+</td></tr>
+<tr valign="top"><td><code>n_top_levels</code></td>
+<td>
+<p>Maximum number of levels.</p>
+</td></tr>
+<tr valign="top"><td><code>decreasing</code></td>
+<td>
+<p>Sort order of encoded values.</p>
+</td></tr>
+<tr valign="top"><td><code>enc_nas</code></td>
+<td>
+<p>(Logical) Encode missing values? Default = <code>TRUE</code>.
+If <code>TRUE</code>, set <code>NA</code>s to <code>0</code>.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Named vector with encoding for feature values.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+cate_encoding(letters[c(1:3,2:3,3)], method = "count_others", n_top_levels = 2)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>hmsPM</em> version 1.0.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

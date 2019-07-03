@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Plot XGBoost Explanations for Single Entry</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for plot_xgb_explanations {hmsPM}"><tr><td>plot_xgb_explanations {hmsPM}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Plot XGBoost Explanations for Single Entry</h2>
+
+<h3>Description</h3>
+
+<p>Plot XGBoost Explanations for Single Entry
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+plot_xgb_explanations(df_explanations, id_name = "id",
+  target_name = "target", ylim = c(0.01, 0.99),
+  colors = alpha(c("blue", "red"), 0.5))
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>df_explanations</code></td>
+<td>
+<p>Data frame with explanations of one dataset to be
+plotted. Must have structure as returned by <code><a href="calc_xgb_weights.html">calc_xgb_weights</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>id_name</code></td>
+<td>
+<p>Name of id variable in test <code>df_explanations</code>
+(required).</p>
+</td></tr>
+<tr valign="top"><td><code>target_name</code></td>
+<td>
+<p>Target name.</p>
+</td></tr>
+<tr valign="top"><td><code>ylim</code></td>
+<td>
+<p>Y-axis limits. See also <code><a href="../../ggplot2/html/lims.html">lims</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>colors</code></td>
+<td>
+<p>Colors used to fill bars in plot.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>ggplot2 object.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="../../xgboost/html/xgb.train.html">xgboost</a></code>
+</p>
+<p>Other xgb explainer functions: <code><a href="calc_shapely_weights.html">calc_shapely_weights</a></code>,
+<code><a href="calc_xgb_explainer.html">calc_xgb_explainer</a></code>,
+<code><a href="calc_xgb_weights.html">calc_xgb_weights</a></code>,
+<code><a href="plot_all_xgb_explanations.html">plot_all_xgb_explanations</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+TODO
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>hmsPM</em> version 1.0.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

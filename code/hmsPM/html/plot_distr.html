@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Plot distribution</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for plot_distr {hmsPM}"><tr><td>plot_distr {hmsPM}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Plot distribution</h2>
+
+<h3>Description</h3>
+
+<p>Plot distribution of feature on target
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+plot_distr(x, y, feature_name = "feature", target_name = "target",
+  feature_scale = NULL, target_type = NULL, varimps = NULL,
+  colors = NULL, nbins = NULL, offset = NULL, min_width = NULL,
+  inner_barplot = TRUE, levels2extract = NULL, ylim = NULL,
+  alpha_fill = 0.2, show_legend = TRUE, varimp_digits = 2,
+  verbose = TRUE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>Feature values.</p>
+</td></tr>
+<tr valign="top"><td><code>y</code></td>
+<td>
+<p>Target values.</p>
+</td></tr>
+<tr valign="top"><td><code>feature_name</code></td>
+<td>
+<p>Feature name.</p>
+</td></tr>
+<tr valign="top"><td><code>target_name</code></td>
+<td>
+<p>Target name.</p>
+</td></tr>
+<tr valign="top"><td><code>feature_scale</code></td>
+<td>
+<p>Feature scale: 'metr', 'ordi', 'nomi'. Automatically
+detected by <code><a href="detect_feature_scale.html">detect_feature_scale</a></code> if not specified.</p>
+</td></tr>
+<tr valign="top"><td><code>target_type</code></td>
+<td>
+<p>Target type: 'regr', 'class', or 'multiclass'.
+Automatically detected by <code><a href="detect_target_type.html">detect_target_type</a></code> if not
+specified.</p>
+</td></tr>
+<tr valign="top"><td><code>varimps</code></td>
+<td>
+<p>Named vector with variable importances with an entry
+for the value of the 'feature_name' parameter.</p>
+</td></tr>
+<tr valign="top"><td><code>colors</code></td>
+<td>
+<p>(Optional) Colors.</p>
+</td></tr>
+<tr valign="top"><td><code>nbins</code></td>
+<td>
+<p>(Optional) Number of bins. Only relevant for metric
+distributions.</p>
+</td></tr>
+<tr valign="top"><td><code>offset</code></td>
+<td>
+<p>(Optional) Percentage of plot which is taken to plot
+inlay plots. Only relevant for metric distributions on (multi-)class
+targets.</p>
+</td></tr>
+<tr valign="top"><td><code>min_width</code></td>
+<td>
+<p>(Optional) Minimum width of bars for categorical
+variables. NOT relevant for metric distributions on (multi-)class targets.</p>
+</td></tr>
+<tr valign="top"><td><code>inner_barplot</code></td>
+<td>
+<p>(Logical) Add a distribution barplot for categorical
+variables. Only relevant for categorical distributions on (multi-)class
+targets.</p>
+</td></tr>
+<tr valign="top"><td><code>levels2extract</code></td>
+<td>
+<p>Levels to be extracted if at all. Only relevant for
+categorical distributions on (multi-)class targets.</p>
+</td></tr>
+<tr valign="top"><td><code>ylim</code></td>
+<td>
+<p>(Optional) Y-axis limits. See also
+<code><a href="../../ggplot2/html/lims.html">lims</a></code>. NOT relevant for metric distributions on
+(multi-)class targets.</p>
+</td></tr>
+<tr valign="top"><td><code>alpha_fill</code></td>
+<td>
+<p>Transparency value [0,1] for fill colors. Only relevant
+for (multi-)class targets.</p>
+</td></tr>
+<tr valign="top"><td><code>show_legend</code></td>
+<td>
+<p>(Logical) Show legend?</p>
+</td></tr>
+<tr valign="top"><td><code>varimp_digits</code></td>
+<td>
+<p>Number of digits for displayed variable importance</p>
+</td></tr>
+<tr valign="top"><td><code>verbose</code></td>
+<td>
+<p>(Logical) Show messages?</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Single ggplot.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>Other distribution plots: <code><a href="plot_distr.cate_class.html">plot_distr.cate_class</a></code>,
+<code><a href="plot_distr.cate_multiclass.html">plot_distr.cate_multiclass</a></code>,
+<code><a href="plot_distr.cate_regr.html">plot_distr.cate_regr</a></code>,
+<code><a href="plot_distr.metr_class.html">plot_distr.metr_class</a></code>,
+<code><a href="plot_distr.metr_multiclass.html">plot_distr.metr_multiclass</a></code>,
+<code><a href="plot_distr.metr_regr.html">plot_distr.metr_regr</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+plot_distr(x = 1:100, y = sample(100, replace = T))
+plot_distr(x = 1:100, y = letters[sample(length(letters), size = 100, replace = T)])
+plot_distr(x = letters[1:100], y = sample(100, replace = T))
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>hmsPM</em> version 1.0.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

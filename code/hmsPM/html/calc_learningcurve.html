@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Calculate Learning Curve</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for calc_learningcurve {hmsPM}"><tr><td>calc_learningcurve {hmsPM}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Calculate Learning Curve</h2>
+
+<h3>Description</h3>
+
+<p>Calculate Learning Curve
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+calc_learningcurve(df_data, formula_string, sparse = TRUE, method,
+  tune_grid, chunks_pct = c(seq(1, 10, 1), seq(20, 100, 10)),
+  balanced = TRUE, metric = "AUC", verbose = TRUE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>df_data</code></td>
+<td>
+<p>Data frame for caret fit. Must contain variable <code>fold</code>
+with members <code>train</code> and <code>test</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>formula_string</code></td>
+<td>
+<p>Formula to use in caret fit (or for creation of
+matrix used).</p>
+</td></tr>
+<tr valign="top"><td><code>sparse</code></td>
+<td>
+<p>Use sparse matrix for caret fit if TRUE. If NULL then no
+matrix is created and df_data is passed.</p>
+</td></tr>
+<tr valign="top"><td><code>method</code></td>
+<td>
+<p>Method to use in caret fit.</p>
+</td></tr>
+<tr valign="top"><td><code>tune_grid</code></td>
+<td>
+<p>Tune grid to use in caret fit.</p>
+</td></tr>
+<tr valign="top"><td><code>chunks_pct</code></td>
+<td>
+<p>Percentages of training data to use for fits.</p>
+</td></tr>
+<tr valign="top"><td><code>balanced</code></td>
+<td>
+<p>Balance the target as long as possible if TRUE.</p>
+</td></tr>
+<tr valign="top"><td><code>metric</code></td>
+<td>
+<p>Tuning metric.</p>
+</td></tr>
+<tr valign="top"><td><code>verbose</code></td>
+<td>
+<p>(Logical) Show messages?</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Data frame with learning curve metrics.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>Other learning curve functions: <code><a href="plot_learningcurve.html">plot_learningcurve</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+TODO
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>hmsPM</em> version 1.0.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

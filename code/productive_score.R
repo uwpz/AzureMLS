@@ -13,7 +13,7 @@ library(dplyr)
 library(stringr)
 library(purrr)
 
-library(BoxCore)
+library(hmsPM)
 
 
 dataloc = "data/"
@@ -51,7 +51,7 @@ l.encoding = l.metadata$cate$encoding
 df[paste0(toomany,"_ENCODED")] = df[toomany]
 
 # Apply encoding
-df[names(l.encoding)] = map(names(l.encoding), ~ BoxCore::encode(df[[.]], l.encoding[[.]]))
+df[names(l.encoding)] = map(names(l.encoding), ~ hmsPM::encode(df[[.]], l.encoding[[.]]))
 
 # Map cate to factors
 df[cate] = map(cate, ~ factor(df[[.]], levels = l.encoding[[.]]))
@@ -70,7 +70,7 @@ if (length(mins)) {
   df[names(mins)] = map(names(mins), ~ ifelse(df[[.]] < mins[.], mins[.], df[[.]])) #set lower values to min
   df[names(mins)] = map(names(mins), ~ df[[.]] - mins[.] + 1) #shift
 }
-df[metr] = map(df[metr], ~ impute(., "zero"))
+df[metr] = map(df[metr], ~ hmsPM::impute(., "zero"))
 
 
 
@@ -86,7 +86,7 @@ features = c(metr, cate, paste0(toomany,"_ENCODED"))
 m.score = sparse.model.matrix(as.formula(paste("~ -1 +", paste(features, collapse = " + "))),
                               data = df[features])
 yhat_score = predict(l.metadata$fit, m.score, type = "prob") %>%
-  BoxCore::scale_predictions(l.metadata$sample$b_sample, l.metadata$sample$b_all)
+  hmsPM::scale_predictions(l.metadata$sample$b_sample, l.metadata$sample$b_all)
 
 # Write scored data
 #df.score = bind_cols(df[c("id")], "score" = round(yhat_score[,2], 5))

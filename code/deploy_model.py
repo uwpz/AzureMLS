@@ -40,7 +40,7 @@ try:
         runtime="python",
         conda_file="conda_file.yml",
         docker_file="docker_file",
-        dependencies=["init.py"] if backend == "python" else ["install_package.R", "BoxCore"])
+        dependencies=["init.py"] if backend == "python" else ["install_package.R", "hmsPM"])
     image = ContainerImage.create(workspace=ws,
                                   name="titanic-image",
                                   models=[model],
@@ -58,7 +58,7 @@ aci_config = AciWebservice.deploy_configuration(cpu_cores=1,
                                                 tags={'sample name': 'AML 101'},
                                                 description='This is a great example.')
 service = Webservice.deploy_from_image(workspace=ws,
-                                       name='titanic-webservice',  # crashes when already exist
+                                       name='titanic-webservice-new',  # crashes when already exist
                                        image=image,
                                        deployment_config=aci_config)
 service.wait_for_deployment(show_output=True)

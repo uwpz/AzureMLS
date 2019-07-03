@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Calculate Pairwise Contingency Value</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for calc_pairwise_contingency {hmsPM}"><tr><td>calc_pairwise_contingency {hmsPM}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Calculate Pairwise Contingency Value</h2>
+
+<h3>Description</h3>
+
+<p>Calculate Pairwise Contingency Value
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+calc_pairwise_contingency(df_2col)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>df_2col</code></td>
+<td>
+<p>Data frame with two with categorical variables.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Pairwise contingency value
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+n_rows = 1e3
+df_test = data.frame(
+  c1 = letters[1:10][sample(1:10, size = n_rows, replace = T)],
+  c2 = letters[1:10][sample(1:10, size = n_rows, replace = T)]
+)
+hmsPM:::calc_pairwise_contingency(df_test[, 1:2])
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>hmsPM</em> version 1.0.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

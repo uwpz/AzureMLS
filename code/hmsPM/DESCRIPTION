@@ -1,0 +1,24 @@
+Package: hmsPM
+Type: Package
+Title: HMS Predictive Modeling
+Version: 1.0.0
+Author: Dr. Arno Becker [aut, cre], Uwe Pritzsche [aut, ctb]
+Maintainer: Dr. Arno Becker <arno.becker@analytical-software.de>
+Author@R: c( person( "Arno", "Becker", email =
+        "arno.becker@analytical-software.de", role = c("aut", "cre")),
+        person( "Uwe", "Pritzsche", email =
+        "uwe.pritzsche@analytical-software.de", role = c("aut", "ctb"))
+        )
+Description: Set of utility functions for Predictive Modeling.
+Depends: R (>= 3.3.0)
+License: TODO
+Imports: magrittr, purrr, dplyr, forcats, Matrix, stringr, tibble,
+        tidyr, corrplot, d3heatmap, ggplot2, gridExtra, vcd,
+        waterfalls, foreach, parallel, caret, xgboost, labeling
+Suggests: devtools, roxygen2, testthat, usethis, rmarkdown, knitr
+Encoding: UTF-8
+LazyData: true
+VignetteBuilder: knitr
+RoxygenNote: 6.1.1
+ByteCompile: true
+Built: R 3.6.0; ; 2019-06-27 14:40:22 UTC; windows

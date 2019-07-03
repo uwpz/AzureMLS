@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Calclulate Contingency Matrix</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for calc_corr.cate {hmsPM}"><tr><td>calc_corr.cate {hmsPM}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Calclulate Contingency Matrix</h2>
+
+<h3>Description</h3>
+
+<p>Calclulate Contingency Matrix
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+calc_corr.cate(df, cutoff, show_n_levels = TRUE,
+  n_level_prefix = "#Levs: ", verbose = TRUE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>df</code></td>
+<td>
+<p>Data frame with categorical variables.</p>
+</td></tr>
+<tr valign="top"><td><code>cutoff</code></td>
+<td>
+<p>Lower cutoff level. Value in [0,1]. Remove rows and
+columns in which no correlation value is above the cutoff value.</p>
+</td></tr>
+<tr valign="top"><td><code>show_n_levels</code></td>
+<td>
+<p>(Logical) Show number of levels after variable names?</p>
+</td></tr>
+<tr valign="top"><td><code>n_level_prefix</code></td>
+<td>
+<p>Prefix for number of levels.</p>
+</td></tr>
+<tr valign="top"><td><code>verbose</code></td>
+<td>
+<p>(Logical) Show messages?</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Contingency matrix.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+n_rows = 1e3
+df_test = data.frame(
+  c1 = letters[1:10][sample(1:10, size = n_rows, replace = T)],
+  c2 = letters[1:10][sample(1:10, size = n_rows, replace = T)],
+  c3 = letters[1:10][sample(1:10, size = n_rows, replace = T)]
+)
+calc_corr.cate(df_test, 0)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>hmsPM</em> version 1.0.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

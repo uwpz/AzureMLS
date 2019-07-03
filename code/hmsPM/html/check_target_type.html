@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Check target type</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for check_target_type {hmsPM}"><tr><td>check_target_type {hmsPM}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Check target type</h2>
+
+<h3>Description</h3>
+
+<p>Check that the target type is valid and compare it with the detected target
+type returned by <code><a href="detect_target_type.html">detect_target_type</a></code>. Return the detected target
+type if the target type is NULL, otherwise the target type. If the scales
+don't match a warning is thrown.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+check_target_type(target_type, d_target_type, target_name = NULL,
+  show_warning = TRUE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>target_type</code></td>
+<td>
+<p>Target type: <code>regr</code>, <code>class</code>, or
+<code>multiclass</code></p>
+</td></tr>
+<tr valign="top"><td><code>d_target_type</code></td>
+<td>
+<p>Detected target type.</p>
+</td></tr>
+<tr valign="top"><td><code>target_name</code></td>
+<td>
+<p>(Optional) Target name.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Valid feature scale string.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>Other data check functions: <code><a href="check_feature_scale.html">check_feature_scale</a></code>,
+<code><a href="check_same_feature_scales.html">check_same_feature_scales</a></code>,
+<code><a href="detect_feature_scale.html">detect_feature_scale</a></code>,
+<code><a href="detect_target_type.html">detect_target_type</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+check_target_type("regr", "regr")
+check_target_type("regr", "class")
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>hmsPM</em> version 1.0.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

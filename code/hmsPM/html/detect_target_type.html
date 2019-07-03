@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Detect target scale</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for detect_target_type {hmsPM}"><tr><td>detect_target_type {hmsPM}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Detect target scale</h2>
+
+<h3>Description</h3>
+
+<p>Detect target scale
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+detect_target_type(x)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>Vector of values.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Target type string: <code>regr</code>, <code>class</code>, or <code>multiclass</code>
+</p>
+
+
+<h3>See Also</h3>
+
+<p>Other data check functions: <code><a href="check_feature_scale.html">check_feature_scale</a></code>,
+<code><a href="check_same_feature_scales.html">check_same_feature_scales</a></code>,
+<code><a href="check_target_type.html">check_target_type</a></code>,
+<code><a href="detect_feature_scale.html">detect_feature_scale</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+detect_target_type(1:3)
+detect_target_type(c(1,1,1))
+detect_target_type(letters[c(1,1,2)])
+detect_target_type(letters[1:3])
+detect_target_type(factor(letters[1:3]))
+df_test = data.frame(list("t_regr" = 1:3, "t_class" = letters[c(1,1,2)], "t_mclass" = letters[1:3]))
+purrr::map(df_test, detect_target_type)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>hmsPM</em> version 1.0.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

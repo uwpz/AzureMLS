@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Check feature scale</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for check_feature_scale {hmsPM}"><tr><td>check_feature_scale {hmsPM}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Check feature scale</h2>
+
+<h3>Description</h3>
+
+<p>Check that the feature scale is valid and compare it with the detected
+feature scale return from <code><a href="detect_feature_scale.html">detect_feature_scale</a></code>. Return the
+detected feature scale if the feature scale is NULL, otherwise the feature
+scale. If the scales don't match a warning is thrown.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+check_feature_scale(feature_scale, d_feature_scale, feature_name = NULL,
+  show_warning = TRUE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>feature_scale</code></td>
+<td>
+<p>Feature scale: <code>metr</code>, <code>ordi</code>, or
+<code>nomi</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>d_feature_scale</code></td>
+<td>
+<p>Detected feature scale.</p>
+</td></tr>
+<tr valign="top"><td><code>feature_name</code></td>
+<td>
+<p>(Optional) Feature name.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Valid feature scale string.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>Other data check functions: <code><a href="check_same_feature_scales.html">check_same_feature_scales</a></code>,
+<code><a href="check_target_type.html">check_target_type</a></code>,
+<code><a href="detect_feature_scale.html">detect_feature_scale</a></code>,
+<code><a href="detect_target_type.html">detect_target_type</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+check_feature_scale("nomi", "nomi")
+check_feature_scale("ordi", "nomi")
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>hmsPM</em> version 1.0.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

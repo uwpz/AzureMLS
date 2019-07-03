@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Calculate Correlation Matrix</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for calc_corr.metr {hmsPM}"><tr><td>calc_corr.metr {hmsPM}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Calculate Correlation Matrix</h2>
+
+<h3>Description</h3>
+
+<p>Calculate Correlation Matrix
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+calc_corr.metr(df, cutoff, method, show_miss_ratio = TRUE,
+  miss_ratio_prefix = "NA: ")
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>df</code></td>
+<td>
+<p>Data frame with metric variables.</p>
+</td></tr>
+<tr valign="top"><td><code>cutoff</code></td>
+<td>
+<p>Lower cutoff level. Value in [0,1]. Remove rows and
+columns in which no correlation value is above the cutoff value.</p>
+</td></tr>
+<tr valign="top"><td><code>method</code></td>
+<td>
+<p>Correlation method. Options: 'spearman' or 'pearson'</p>
+</td></tr>
+<tr valign="top"><td><code>show_miss_ratio</code></td>
+<td>
+<p>(Logical) Show missing ratio after variable name?</p>
+</td></tr>
+<tr valign="top"><td><code>miss_ratio_prefix</code></td>
+<td>
+<p>Prefix for missing ratios.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Correlation matrix.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+TODO
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>hmsPM</em> version 1.0.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

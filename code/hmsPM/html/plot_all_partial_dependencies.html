@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Plot all partial dependencies</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for plot_all_partial_dependencies {hmsPM}"><tr><td>plot_all_partial_dependencies {hmsPM}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Plot all partial dependencies</h2>
+
+<h3>Description</h3>
+
+<p>Plot list of all partial dependencies
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+plot_all_partial_dependencies(df_partialdep, df_data, feature_names,
+  target_name = "target", individual_flag_name = NULL, ylim = NULL,
+  colors = NULL, min_width = 0.2, show_1_legend = TRUE,
+  df_partialdep_cv = NULL, add_cv_lines = FALSE,
+  add_cv_conf_int = FALSE, verbose = TRUE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>df_partialdep</code></td>
+<td>
+<p>Data frame with structure as created by
+<code><a href="calc_partial_dependencies.html">calc_partial_dependencies</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>df_data</code></td>
+<td>
+<p>Feature and target data.</p>
+</td></tr>
+<tr valign="top"><td><code>feature_names</code></td>
+<td>
+<p>Names of features to plot.</p>
+</td></tr>
+<tr valign="top"><td><code>target_name</code></td>
+<td>
+<p>Target name.</p>
+</td></tr>
+<tr valign="top"><td><code>individual_flag_name</code></td>
+<td>
+<p>Optional column in df_data comprising 0 or 1 and
+which marks individual records to be highlighted in plots, i.e. black border or black dot.</p>
+</td></tr>
+<tr valign="top"><td><code>ylim</code></td>
+<td>
+<p>Y-axis limits. See also <code><a href="../../ggplot2/html/lims.html">lims</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>colors</code></td>
+<td>
+<p>Colors for target levels. Used in (multi-)class
+performance plots.</p>
+</td></tr>
+<tr valign="top"><td><code>min_width</code></td>
+<td>
+<p>Minimum width of bars for categorical variables. Only
+relevant for (multi-)class targets.</p>
+</td></tr>
+<tr valign="top"><td><code>show_1_legend</code></td>
+<td>
+<p>Show legend only on first plot.</p>
+</td></tr>
+<tr valign="top"><td><code>df_partialdep_cv</code></td>
+<td>
+<p>(Optional) Data frame with structure as created by
+<code><a href="calc_partial_dependencies.html">calc_partial_dependencies</a></code> but with additional column
+<code>run</code> distinguishing cross-validation runs. Needs to be passed if
+either <code>add_cv_lines</code> or <code>add_cv_conf_int</code> is <code>TRUE</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>add_cv_lines</code></td>
+<td>
+<p>Add lines per cross validation run to plot?</p>
+</td></tr>
+<tr valign="top"><td><code>add_cv_conf_int</code></td>
+<td>
+<p>Add confidence intervals derived from cross
+validation?</p>
+</td></tr>
+<tr valign="top"><td><code>verbose</code></td>
+<td>
+<p>(Logical) Show messages?</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>List with all partial dependecy plots.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+TODO
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>hmsPM</em> version 1.0.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

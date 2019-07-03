@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Add cross validation lines and confidence interval</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for add_cv_infos {hmsPM}"><tr><td>add_cv_infos {hmsPM}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Add cross validation lines and confidence interval</h2>
+
+<h3>Description</h3>
+
+<p>Add cross validation lines and confidence interval
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+add_cv_infos(p, df_partialdep, df_partialdep_cv, df_data, feature_name,
+  target_name, run_name = "run", colors, min_width,
+  add_cv_lines = TRUE, add_cv_conf_int = TRUE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>p</code></td>
+<td>
+<p>Base plot.</p>
+</td></tr>
+<tr valign="top"><td><code>df_partialdep_cv</code></td>
+<td>
+<p>Data frame with structure as created by
+<code><a href="calc_partial_dependencies.html">calc_partial_dependencies</a></code> but with additional column
+<code>run</code> distinguishing cross-validation runs.</p>
+</td></tr>
+<tr valign="top"><td><code>df_data</code></td>
+<td>
+<p>Data frame. TODO</p>
+</td></tr>
+<tr valign="top"><td><code>feature_name</code></td>
+<td>
+<p>Feature name.</p>
+</td></tr>
+<tr valign="top"><td><code>target_name</code></td>
+<td>
+<p>Target name.</p>
+</td></tr>
+<tr valign="top"><td><code>run_name</code></td>
+<td>
+<p>TODO</p>
+</td></tr>
+<tr valign="top"><td><code>add_cv_lines</code></td>
+<td>
+<p>Add lines per cross validation run to plot?</p>
+</td></tr>
+<tr valign="top"><td><code>add_cv_conf_int</code></td>
+<td>
+<p>Add confidence intervals derived from cross
+validation?</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>ggplot
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+TODO
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>hmsPM</em> version 1.0.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

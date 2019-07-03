@@ -17,7 +17,7 @@ init = function() {
   library(caret)
   library(xgboost)
   library(config)
-  library(BoxCore)
+  library(hmsPM)
 
   # Webservice specific libraries
   library(jsonlite)
@@ -53,7 +53,7 @@ score = function(df, l.metadata) {
   # Feature Engineering
   df$deck = as.factor(str_sub(df$cabin, 1, 1)) #deck as first character of cabin
   df$familysize = df$sibsp + df$parch + 1 #add number of siblings and spouses to the number of parents and children
-  df = df %>% group_by(ticket) %>% mutate(fare_pp = fare/n()) %>% ungroup() #fare per person (one ticket might comprise several persons)
+  #df = df %>% group_by(ticket) %>% mutate(fare_pp = fare/n()) %>% ungroup() #fare per person (one ticket might comprise several persons)
 
 
   # Adapt categorical variables: Order of following steps is very important! -----------------------------------------------
@@ -67,7 +67,7 @@ score = function(df, l.metadata) {
   df[paste0(toomany,"_ENCODED")] = df[toomany]
 
   # Apply encoding
-  df[names(l.encoding)] = map(names(l.encoding), ~ BoxCore::encode(df[[.]], l.encoding[[.]]))
+  df[names(l.encoding)] = map(names(l.encoding), ~ hmsPM::encode(df[[.]], l.encoding[[.]]))
 
   # Map cate to factors
   df[cate] = map(cate, ~ factor(df[[.]], levels = l.encoding[[.]]))
@@ -83,7 +83,7 @@ score = function(df, l.metadata) {
     df[names(mins)] = map(names(mins), ~ ifelse(df[[.]] < mins[.], mins[.], df[[.]])) #set lower values to min
     df[names(mins)] = map(names(mins), ~ df[[.]] - mins[.] + 1) #shift
   }
-  df[metr] = map(df[metr], ~ BoxCore::impute(., "zero"))
+  df[metr] = map(df[metr], ~ hmsPM::impute(., "zero"))
 
 
   # Score ----------------------------------------------------------------------------------
@@ -95,7 +95,7 @@ score = function(df, l.metadata) {
   m.score = sparse.model.matrix(as.formula(paste("~ -1 +", paste(features, collapse = " + "))),
                                 data = df[features])
   yhat_score = predict(l.metadata$fit, m.score, type = "prob") %>%
-    BoxCore::scale_predictions(l.metadata$sample$b_sample, l.metadata$sample$b_all)
+    hmsPM::scale_predictions(l.metadata$sample$b_sample, l.metadata$sample$b_all)
 
   return(yhat_score)
 }

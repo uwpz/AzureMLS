@@ -23,7 +23,7 @@ df = read_csv(paste0(dataloc,"titanic.csv"), col_names = TRUE)
 # Feature Engineering
 df$deck = as.factor(str_sub(df$cabin, 1, 1)) #deck as first character of cabin
 df$familysize = df$sibsp + df$parch + 1 #add number of siblings and spouses to the number of parents and children
-df %<>% group_by(ticket) %>% mutate(fare_pp = fare/n()) %>% ungroup() #fare per person (one ticket might comprise several persons)
+#df %<>% group_by(ticket) %>% mutate(fare_pp = fare/n()) %>% ungroup() #fare per person (one ticket might comprise several persons)
 
 # Read column metadata
 df.meta = read_excel(paste0(dataloc,"datamodel_","titanic.xlsx"), skip = 1) %>%
@@ -40,11 +40,12 @@ summary(df$target)
 
 # Define nominal and ordinal features
 nomi = df.meta %>% filter(type == "nomi") %>% .$variable
+nomi = setdiff(nomi, "boat")
 ordi = df.meta %>% filter(type == "ordi") %>% .$variable
 
 # Make them factors
-df[nomi] = map(df[nomi], ~ BoxCore::convert_scale(., "nomi")) #map to nominal
-df[ordi] = map(df[ordi], ~ BoxCore::convert_scale(., "ordi")) #map to ordinal
+df[nomi] = map(df[nomi], ~ hmsPM::convert_scale(., "nomi")) #map to nominal
+df[ordi] = map(df[ordi], ~ hmsPM::convert_scale(., "ordi")) #map to ordinal
 
 # Merge nomi and ordi
 cate = union(nomi, ordi)
@@ -60,15 +61,15 @@ df[paste0(toomany,"_ENCODED")] = df[toomany]
 
 # Create encoding for all categorical variables
 l.encoding = c(map(df[setdiff(cate, toomany)], ~
-                     BoxCore::cate_encoding(., "self", other_value = "_OTHER_", na_value = "(Missing)")),
+                     hmsPM::cate_encoding(., "self", other_value = "_OTHER_", na_value = "(Missing)")),
                map(df[toomany], ~
-                     BoxCore::cate_encoding(., "self_topn", n_top_levels = topn_toomany,
+                     hmsPM::cate_encoding(., "self_topn", n_top_levels = topn_toomany,
                                             other_value = "_OTHER_", na_value = "(Missing)")),
                map(df[paste0(toomany,"_ENCODED")], ~
-                     BoxCore::cate_encoding(., "count_others", n_top_levels = topn_toomany, na_value = 0)))
+                     hmsPM::cate_encoding(., "count_others", n_top_levels = topn_toomany, na_value = 0)))
 
 # Apply encoding
-df[names(l.encoding)] = map(names(l.encoding), ~ BoxCore::encode(df[[.]], l.encoding[[.]]))
+df[names(l.encoding)] = map(names(l.encoding), ~ hmsPM::encode(df[[.]], l.encoding[[.]]))
 
 # Map cate to factors
 df[cate] = map(cate, ~ factor(df[[.]], levels = l.encoding[[.]]))
@@ -92,7 +93,7 @@ summary(df[metr])
 mins = map_dbl(df[metr], ~ min(., na.rm = TRUE)) #get minimum for these vars
 df[metr] = map(metr, ~ df[[.]] - mins[.] + 1) #shift
 miss = metr[map_lgl(df[metr], ~ any(is.na(.)))]
-df[miss] = map(df[miss], ~ impute(., "zero"))
+df[miss] = map(df[miss], ~ hmsPM::impute(., "zero"))
 l.metametr = list(mins = mins)
 
 
@@ -108,7 +109,7 @@ l.metametr = list(mins = mins)
 features = c(metr, cate, paste0(toomany,"_ENCODED"))
 
 # Undersample
-c(df.train, b_sample, b_all) %<-%  (df %>% BoxCore::undersample_n(n_max_per_level = 1e7))
+c(df.train, b_sample, b_all) %<-%  (df %>% hmsPM::undersample_n(n_max_per_level = 1e7))
 summary(df.train$target); b_sample; b_all
 
 # Save Metainformation (needed for scoring)
@@ -120,7 +121,7 @@ m.train = sparse.model.matrix(as.formula(paste("~ -1 +", paste(features, collaps
                               data = df.train[features])
 fit = train(m.train, df.train$target,
             trControl = trainControl(method = "none", returnData = FALSE),
-            method = xgb,
+            method = xgb_custom,
             tuneGrid = expand.grid(nrounds = 2100, eta = 0.01,
                                    max_depth = 3, min_child_weight = 2,
                                    colsample_bytree = 0.7, subsample = 0.7,

@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Convert scale level</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for convert_scale {hmsPM}"><tr><td>convert_scale {hmsPM}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Convert scale level</h2>
+
+<h3>Description</h3>
+
+<p>Convert scale level
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+convert_scale(x, scale, name = NULL, verbose = F)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>Vector of values.</p>
+</td></tr>
+<tr valign="top"><td><code>scale</code></td>
+<td>
+<p>Target scales. Options: &quot;metr&quot;, &quot;ordi&quot;, &quot;nomi&quot;.</p>
+</td></tr>
+<tr valign="top"><td><code>name</code></td>
+<td>
+<p>Variable name.</p>
+</td></tr>
+<tr valign="top"><td><code>verbose</code></td>
+<td>
+<p>(Logical) Show messages?</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Converted vector of values.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>Other data processing functions: <code><a href="impute.html">impute</a></code>,
+<code><a href="level_ratio.html">level_ratio</a></code>,
+<code><a href="levels_to_extract.html">levels_to_extract</a></code>,
+<code><a href="missing_ratio.html">missing_ratio</a></code>, <code><a href="stat_mode.html">stat_mode</a></code>,
+<code><a href="winsorize.html">winsorize</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+convert_scale(1:3, "metr")
+convert_scale(1:3, "ordi")
+convert_scale(1:3, "nomi")
+# won't work
+## Not run: convert_scale(letters[1:3], "metr")
+convert_scale(letters[1:3], "ordi")
+convert_scale(letters[1:3], "nomi")
+# won't work
+## Not run: convert_scale(factor(letters[1:3]), "metr")
+convert_scale(factor(letters[1:3]), "ordi")
+convert_scale(factor(letters[1:3]), "nomi")
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>hmsPM</em> version 1.0.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

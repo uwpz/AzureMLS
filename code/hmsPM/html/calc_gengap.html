@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Calcualate Generalization Gap</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for calc_gengap {hmsPM}"><tr><td>calc_gengap {hmsPM}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Calcualate Generalization Gap</h2>
+
+<h3>Description</h3>
+
+<p>Calcualate Generalization Gap
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+calc_gengap(df_data, formula_string, sparse = TRUE, method, tune_grid,
+  cluster = NULL)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>df_data</code></td>
+<td>
+<p>Data frame for caret fit. Must contain variable &quot;fold&quot;
+with members &quot;train&quot; and &quot;test&quot;.</p>
+</td></tr>
+<tr valign="top"><td><code>formula_string</code></td>
+<td>
+<p>Formula string to use in caret fit (or for creation of
+matrix used).</p>
+</td></tr>
+<tr valign="top"><td><code>sparse</code></td>
+<td>
+<p>Use sparse matrix for caret fit if TRUE. If NULL then
+no matrix is created and df_data is passed.</p>
+</td></tr>
+<tr valign="top"><td><code>method</code></td>
+<td>
+<p>Method to use in caret fit.</p>
+</td></tr>
+<tr valign="top"><td><code>tune_grid</code></td>
+<td>
+<p>Tune grid to use in caret fit</p>
+</td></tr>
+<tr valign="top"><td><code>cluster</code></td>
+<td>
+<p>Name of cluster (for parallel processing).</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Data frame with performance metrics for train and test data.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>Other generalization gap functions: <code><a href="plot_gengap.html">plot_gengap</a></code>
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>hmsPM</em> version 1.0.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

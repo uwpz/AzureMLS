@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Plot all performance plots</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for plot_all_performances {hmsPM}"><tr><td>plot_all_performances {hmsPM}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Plot all performance plots</h2>
+
+<h3>Description</h3>
+
+<p>Plot list of performance plots.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+plot_all_performances(y, yhat, reduce_factor = NULL,
+  quantiles = seq(0.1, 0.9, 0.1), colors = NULL,
+  gradcol = (grDevices::colorRampPalette(hmsPM:::COLORS_HEX))(100),
+  ylim = NULL, oneclass = FALSE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>y</code></td>
+<td>
+<p>Target values.</p>
+</td></tr>
+<tr valign="top"><td><code>yhat</code></td>
+<td>
+<p>Vector (Regression) or matrix (Classification) of
+predicted values as returned by caret's predict function.</p>
+</td></tr>
+<tr valign="top"><td><code>reduce_factor</code></td>
+<td>
+<p>Parameter to thin out ROC curve in case building needs
+too much memory, e.g., with a value of 0.01 only every hundreds point is
+taken.</p>
+</td></tr>
+<tr valign="top"><td><code>quantiles</code></td>
+<td>
+<p>Numeric vector with probs of quantiles to use for
+calibration plot.</p>
+</td></tr>
+<tr valign="top"><td><code>colors</code></td>
+<td>
+<p>Colors for target levels. Used in (multi-)class
+performance plots.</p>
+</td></tr>
+<tr valign="top"><td><code>gradcol</code></td>
+<td>
+<p>Gradient colors. Used in regression performance and
+residual plots.</p>
+</td></tr>
+<tr valign="top"><td><code>ylim</code></td>
+<td>
+<p>Y-axis limits (used in several plots).</p>
+</td></tr>
+<tr valign="top"><td><code>oneclass</code></td>
+<td>
+<p>Create some plots only for target class in case of classification.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p><strong>(Multi-)Classification Plots:</strong>
+</p>
+
+<ul>
+<li><p> ROC
+</p>
+</li>
+<li><p> Confusion Matrix
+</p>
+</li>
+<li><p> Distribution
+</p>
+</li>
+<li><p> Calibration
+</p>
+</li>
+<li><p> Gain
+</p>
+</li>
+<li><p> Lift
+</p>
+</li>
+<li><p> Precision-Recall
+</p>
+</li>
+<li><p> Precision
+</p>
+</li></ul>
+
+<p><strong>Regression Plots:</strong>
+</p>
+
+<ul>
+<li><p> Performance
+</p>
+</li>
+<li><p> Distribution
+</p>
+</li>
+<li><p> Calibration
+</p>
+</li>
+<li><p> Residuals
+</p>
+</li></ul>
+
+
+
+<h3>Value</h3>
+
+<p>List of performance plots.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+TODO
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>hmsPM</em> version 1.0.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

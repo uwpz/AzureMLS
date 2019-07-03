@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Calculate XGBoost Weights</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for calc_xgb_weights {hmsPM}"><tr><td>calc_xgb_weights {hmsPM}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Calculate XGBoost Weights</h2>
+
+<h3>Description</h3>
+
+<p>Calculate XGBoost Weights
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+calc_xgb_weights(fit, formula_string, sparse = TRUE, df_test, yhat,
+  df_explainer, b_sample = NULL, b_all = NULL, select_class = NULL,
+  id_name = "id", top_n = NULL, rest_name = "... the rest",
+  digits = 2, verbose = TRUE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>fit</code></td>
+<td>
+<p>Xgb caret fit.</p>
+</td></tr>
+<tr valign="top"><td><code>formula_string</code></td>
+<td>
+<p>Formula string used in caret fit (or for creation
+of matrix used). Should contain no intercept.</p>
+</td></tr>
+<tr valign="top"><td><code>sparse</code></td>
+<td>
+<p>Use sparse matrix for caret fit if TRUE.</p>
+</td></tr>
+<tr valign="top"><td><code>df_test</code></td>
+<td>
+<p>Data frame (with test data) for which to calculate
+explanations.</p>
+</td></tr>
+<tr valign="top"><td><code>yhat</code></td>
+<td>
+<p>Predictions (vector) of test data which should be
+explained.</p>
+</td></tr>
+<tr valign="top"><td><code>df_explainer</code></td>
+<td>
+<p>Explainer data as created by
+<code><a href="calc_xgb_explainer.html">calc_xgb_explainer</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>b_sample</code></td>
+<td>
+<p>Named vector with priori probabilities of sampled data.</p>
+</td></tr>
+<tr valign="top"><td><code>b_all</code></td>
+<td>
+<p>Named vector with priori probabilities of all data.</p>
+</td></tr>
+<tr valign="top"><td><code>select_class</code></td>
+<td>
+<p>In case of multiclass target the class for which
+explanations should be created (per default the &quot;winner&quot; class is taken).</p>
+</td></tr>
+<tr valign="top"><td><code>id_name</code></td>
+<td>
+<p>Name of id variable in test data (required).</p>
+</td></tr>
+<tr valign="top"><td><code>top_n</code></td>
+<td>
+<p>Only the top n weights per observation are plotted. All
+&quot;others&quot; are summarized under &quot;... the rest&quot;.</p>
+</td></tr>
+<tr valign="top"><td><code>rest_name</code></td>
+<td>
+<p>Label under wich &quot;others&quot; are summarized.</p>
+</td></tr>
+<tr valign="top"><td><code>digits</code></td>
+<td>
+<p>Returned weights are rounded by digits.</p>
+</td></tr>
+<tr valign="top"><td><code>verbose</code></td>
+<td>
+<p>(Logical) Show messages?</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Data frame with weights per feature which explain the prediction for
+all observations of df_test. TODO Columns?
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="../../xgboost/html/xgb.train.html">xgboost</a></code>
+</p>
+<p>Other xgb explainer functions: <code><a href="calc_shapely_weights.html">calc_shapely_weights</a></code>,
+<code><a href="calc_xgb_explainer.html">calc_xgb_explainer</a></code>,
+<code><a href="plot_all_xgb_explanations.html">plot_all_xgb_explanations</a></code>,
+<code><a href="plot_xgb_explanations.html">plot_xgb_explanations</a></code>
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>hmsPM</em> version 1.0.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

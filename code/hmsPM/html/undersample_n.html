@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Undersample target</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for undersample_n {hmsPM}"><tr><td>undersample_n {hmsPM}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Undersample target</h2>
+
+<h3>Description</h3>
+
+<p>Undersample (multi-)class target.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+undersample_n(df_data, target_name = "target", n_max_per_level)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>df_data</code></td>
+<td>
+<p>Data frame with feature and target columns.</p>
+</td></tr>
+<tr valign="top"><td><code>target_name</code></td>
+<td>
+<p>Name of target factor variable.</p>
+</td></tr>
+<tr valign="top"><td><code>n_max_per_level</code></td>
+<td>
+<p>Maximum number of samples per target level.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>List with 'data' of undersampled target and base ratios b_sample and
+b_all.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>Other prediction utility functions: <code><a href="detect_caret_predict_type.html">detect_caret_predict_type</a></code>,
+<code><a href="model_matrix.html">model_matrix</a></code>,
+<code><a href="performance_summary.html">performance_summary</a></code>,
+<code><a href="scale_predictions.html">scale_predictions</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+library(magrittr)
+df_data = data.frame(
+  "target" = sample(10),
+  "f1"     = factor(sample(letters[1:10])),
+  "f2"     = sample(10)
+)
+c(df_data, b_sample, b_all) %&lt;-% undersample_n(df_data, n_max_per_level = 2)
+df_data
+b_sample
+b_all
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>hmsPM</em> version 1.0.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

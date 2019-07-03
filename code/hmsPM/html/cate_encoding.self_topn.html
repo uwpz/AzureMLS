@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Self Encoding of Top N Levels</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for cate_encoding.self_topn {hmsPM}"><tr><td>cate_encoding.self_topn {hmsPM}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Self Encoding of Top N Levels</h2>
+
+<h3>Description</h3>
+
+<p>Self encoding of the top N most frequent feature levels
+(<code>n_top_levels</code>).
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+cate_encoding.self_topn(x, n_top_levels = 20, enc_nas = TRUE,
+  na_value = NULL, other_value = NULL)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>Feature values to be encoded.</p>
+</td></tr>
+<tr valign="top"><td><code>n_top_levels</code></td>
+<td>
+<p>Maximum number of levels.</p>
+</td></tr>
+<tr valign="top"><td><code>enc_nas</code></td>
+<td>
+<p>(Logical) Encode missing values? Default = <code>TRUE</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>na_value</code></td>
+<td>
+<p>(Optional) Replacement value for <code>NA</code>s. The default
+value for <code>metr</code> features is 0.</p>
+</td></tr>
+<tr valign="top"><td><code>other_value</code></td>
+<td>
+<p>(Optional) Replacement value for unknown/other values to
+be encoded later.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Named vector with encoding for feature values.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+cate_encoding(letters[c(1:3,2:3,3)], method = "self_topn", n_top_levels = 2)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>hmsPM</em> version 1.0.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

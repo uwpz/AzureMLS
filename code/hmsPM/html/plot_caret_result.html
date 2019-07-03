@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Plot Caret Result</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for plot_caret_result {hmsPM}"><tr><td>plot_caret_result {hmsPM}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Plot Caret Result</h2>
+
+<h3>Description</h3>
+
+<p>Plot Caret Result
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+plot_caret_result(fit, metric = "AUC", x = NULL, color = NULL,
+  linetype = NULL, shape = NULL, facet = NULL, ylim = NULL,
+  errorbar = FALSE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>fit</code></td>
+<td>
+<p>Caret fit.</p>
+</td></tr>
+<tr valign="top"><td><code>metric</code></td>
+<td>
+<p>Metric to plot.</p>
+</td></tr>
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>Variable (name) used for x-axis.</p>
+</td></tr>
+<tr valign="top"><td><code>color</code></td>
+<td>
+<p>Variable (name) used for color grouping.</p>
+</td></tr>
+<tr valign="top"><td><code>linetype</code></td>
+<td>
+<p>Variable (name) used for linetype grouping.</p>
+</td></tr>
+<tr valign="top"><td><code>shape</code></td>
+<td>
+<p>Variable (name) used for shape grouping.</p>
+</td></tr>
+<tr valign="top"><td><code>facet</code></td>
+<td>
+<p>Character value with facet formula.</p>
+</td></tr>
+<tr valign="top"><td><code>ylim</code></td>
+<td>
+<p>Y-axis limits. See also <code><a href="../../ggplot2/html/lims.html">lims</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>errorbar</code></td>
+<td>
+<p>Plot error bars (in case of crossvalidated caret fit) if
+TRUE.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>ggplot2 object
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>hmsPM</em> version 1.0.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

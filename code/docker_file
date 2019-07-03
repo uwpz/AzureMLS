@@ -13,4 +13,4 @@ RUN apt-get update && apt-get install r-base -y && apt-get install libcurl4-open
 
 # Install packages
 RUN Rscript /var/azureml-app/install_package.R
-RUN cp -r /var/azureml-app/BoxCore usr/local/lib/R/site-library/BoxCore
+RUN cp -r /var/azureml-app/hmsPM usr/local/lib/R/site-library/hmsPM

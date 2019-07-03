@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Detect feature scale</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for detect_feature_scale {hmsPM}"><tr><td>detect_feature_scale {hmsPM}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Detect feature scale</h2>
+
+<h3>Description</h3>
+
+
+<dl>
+<dt><code>metr</code></dt><dd><p>numeric data</p>
+</dd>
+<dt><code>ordi</code></dt><dd><p>factor data with order levels (numbers, letters, or
+LETTERS)</p>
+</dd>
+<dt><code>nomi</code></dt><dd><p>factor data with unordered levels or character data</p>
+</dd>
+</dl>
+
+
+
+<h3>Usage</h3>
+
+<pre>
+detect_feature_scale(x)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>Vector of values.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Scale string: <code>metr</code>, <code>ordi</code>, or <code>nomi</code>.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>Other data check functions: <code><a href="check_feature_scale.html">check_feature_scale</a></code>,
+<code><a href="check_same_feature_scales.html">check_same_feature_scales</a></code>,
+<code><a href="check_target_type.html">check_target_type</a></code>,
+<code><a href="detect_target_type.html">detect_target_type</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+detect_feature_scale(1:3)
+detect_feature_scale(letters[1:3])
+detect_feature_scale(factor(letters[1:3]))
+df_test = data.frame(list("f_metr" = 1:3, "f_nomi" = letters[1:3]))
+purrr::map(df_test, detect_feature_scale)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>hmsPM</em> version 1.0.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

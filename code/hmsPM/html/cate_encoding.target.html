@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Target Encoding</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for cate_encoding.target {hmsPM}"><tr><td>cate_encoding.target {hmsPM}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Target Encoding</h2>
+
+<h3>Description</h3>
+
+<p>The feature values are encoded with the count-encoded mean of the target
+reference level <code>y_ref_level</code> over each feature value.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+cate_encoding.target(x, y, y_ref_level, decreasing = TRUE,
+  enc_nas = TRUE, enc_others = TRUE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>Feature values to be encoded.</p>
+</td></tr>
+<tr valign="top"><td><code>y</code></td>
+<td>
+<p>Target values.</p>
+</td></tr>
+<tr valign="top"><td><code>y_ref_level</code></td>
+<td>
+<p>Target reference level.</p>
+</td></tr>
+<tr valign="top"><td><code>decreasing</code></td>
+<td>
+<p>Sort order of encoded values.</p>
+</td></tr>
+<tr valign="top"><td><code>enc_nas</code></td>
+<td>
+<p>(Logical) Encode missing values? Default = <code>TRUE</code>.
+If <code>TRUE</code>, set <code>NA</code>s to <code>0</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>enc_others</code></td>
+<td>
+<p>(Logical) Encode unkown/other values? Default =
+<code>TRUE</code>. If <code>TRUE</code>, set <code>OTHERS</code> to <code>max(encoding)+1</code>.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Named vector with encoding for feature values.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: TODO
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>hmsPM</em> version 1.0.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

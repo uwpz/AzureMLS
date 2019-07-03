@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Calculate XGBoost Explainer Data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for calc_xgb_explainer {hmsPM}"><tr><td>calc_xgb_explainer {hmsPM}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Calculate XGBoost Explainer Data</h2>
+
+<h3>Description</h3>
+
+<p>Parses all <code><a href="../../xgboost/html/xgb.train.html">xgboost</a></code> trees and returns data frame needed for
+deriving explainer weights for predictions.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+calc_xgb_explainer(fit, formula_string, sparse = TRUE, df_train)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>fit</code></td>
+<td>
+<p>Xgb caret fit.</p>
+</td></tr>
+<tr valign="top"><td><code>formula_string</code></td>
+<td>
+<p>Formula string used in caret fit (or for creation of
+matrix used). Should contain no intercept.</p>
+</td></tr>
+<tr valign="top"><td><code>sparse</code></td>
+<td>
+<p>Use sparse matrix for caret fit if TRUE.</p>
+</td></tr>
+<tr valign="top"><td><code>df_train</code></td>
+<td>
+<p>Data used to train caret fit.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Xgb explainer data.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="../../xgboost/html/xgb.train.html">xgboost</a></code>
+</p>
+<p>Other xgb explainer functions: <code><a href="calc_shapely_weights.html">calc_shapely_weights</a></code>,
+<code><a href="calc_xgb_weights.html">calc_xgb_weights</a></code>,
+<code><a href="plot_all_xgb_explanations.html">plot_all_xgb_explanations</a></code>,
+<code><a href="plot_xgb_explanations.html">plot_xgb_explanations</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+TODO
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>hmsPM</em> version 1.0.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

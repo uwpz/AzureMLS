@@ -3,10 +3,11 @@ from azureml.core import Workspace
 import requests
 import pandas as pd
 
-pd.read_csv("data/titanic.csv").iloc[6:9, :].to_json("data/records.json", orient="index")
+features = ["age", "fare", "sex", "embarked", "home.dest", "pclass", "sibsp", "parch", "cabin"]
+pd.read_csv("data/titanic.csv")[features].iloc[6:7, :].to_json("data/records.json", orient="index")
 
 ws = Workspace.from_config("code/config_ws.json")
-service = ws.webservices['titanic-webservice']
+service = ws.webservices['titanic-webservice-new']
 
 with open("data/records.json") as file:
     test_samples = file.read()

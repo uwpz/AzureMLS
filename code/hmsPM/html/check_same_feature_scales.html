@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Check for identical feature scales</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for check_same_feature_scales {hmsPM}"><tr><td>check_same_feature_scales {hmsPM}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Check for identical feature scales</h2>
+
+<h3>Description</h3>
+
+<p>Check that all feature scales are valid and the same and throw an error if
+this is not the case.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+check_same_feature_scales(feature_scales)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>feature_scales</code></td>
+<td>
+<p>Vector of feature scales.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>feature_scales
+</p>
+
+
+<h3>See Also</h3>
+
+<p>Other data check functions: <code><a href="check_feature_scale.html">check_feature_scale</a></code>,
+<code><a href="check_target_type.html">check_target_type</a></code>,
+<code><a href="detect_feature_scale.html">detect_feature_scale</a></code>,
+<code><a href="detect_target_type.html">detect_target_type</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+check_same_feature_scales(c("nomi", "nomi", "nomi"))
+check_same_feature_scales(c("nomi", "nomi", "ordi"))
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>hmsPM</em> version 1.0.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

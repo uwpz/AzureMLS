@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Plot categorical distribution on regression target</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for plot_distr.cate_regr {hmsPM}"><tr><td>plot_distr.cate_regr {hmsPM}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Plot categorical distribution on regression target</h2>
+
+<h3>Description</h3>
+
+<p>Plot categorical distribution on regression target
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+plot_distr.cate_regr(df_data, feature_name, target_name, varimps = NULL,
+  colors, ylim = NULL, show_legend = TRUE, varimp_digits = 2,
+  verbose = TRUE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>df_data</code></td>
+<td>
+<p>Data frame with columns named according to the values
+of the 'feature_name' and 'target_name' parameters.</p>
+</td></tr>
+<tr valign="top"><td><code>feature_name</code></td>
+<td>
+<p>Feature name.</p>
+</td></tr>
+<tr valign="top"><td><code>target_name</code></td>
+<td>
+<p>Target name.</p>
+</td></tr>
+<tr valign="top"><td><code>varimps</code></td>
+<td>
+<p>Named vector with variable importances with an entry
+for the value of the 'feature_name' parameter.</p>
+</td></tr>
+<tr valign="top"><td><code>colors</code></td>
+<td>
+<p>NOT USED</p>
+</td></tr>
+<tr valign="top"><td><code>ylim</code></td>
+<td>
+<p>Y-axis limits. See also <code><a href="../../ggplot2/html/lims.html">lims</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>show_legend</code></td>
+<td>
+<p>(Logical) Show legend?</p>
+</td></tr>
+<tr valign="top"><td><code>varimp_digits</code></td>
+<td>
+<p>Number of digits for displayed variable importance</p>
+</td></tr>
+<tr valign="top"><td><code>verbose</code></td>
+<td>
+<p>(Logical) Show messages?</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Single ggplot.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>Other distribution plots: <code><a href="plot_distr.cate_class.html">plot_distr.cate_class</a></code>,
+<code><a href="plot_distr.cate_multiclass.html">plot_distr.cate_multiclass</a></code>,
+<code><a href="plot_distr.metr_class.html">plot_distr.metr_class</a></code>,
+<code><a href="plot_distr.metr_multiclass.html">plot_distr.metr_multiclass</a></code>,
+<code><a href="plot_distr.metr_regr.html">plot_distr.metr_regr</a></code>,
+<code><a href="plot_distr.html">plot_distr</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+TODO
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>hmsPM</em> version 1.0.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Calculate partial dependance</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for calc_partial_dependencies {hmsPM}"><tr><td>calc_partial_dependencies {hmsPM}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Calculate partial dependance</h2>
+
+<h3>Description</h3>
+
+<p>Partial dependance on green field.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+calc_partial_dependencies(df_data, df_data_orig = NULL, fit,
+  formula_string, sparse = TRUE, feature_names = NULL,
+  b_sample = NULL, b_all = NULL, quantiles = seq(0, 1, 0.1),
+  verbose = TRUE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>df_data</code></td>
+<td>
+<p>Data frame for which partial dependencies should be
+calculated.</p>
+</td></tr>
+<tr valign="top"><td><code>df_data_orig</code></td>
+<td>
+<p>Original data frame with data (needed to derive
+quantiles). If NULL, <code>df_data</code> is taken.</p>
+</td></tr>
+<tr valign="top"><td><code>fit</code></td>
+<td>
+<p>Caret fit.</p>
+</td></tr>
+<tr valign="top"><td><code>formula_string</code></td>
+<td>
+<p>Formula string used in caret fit (or for creation of
+matrix used).</p>
+</td></tr>
+<tr valign="top"><td><code>sparse</code></td>
+<td>
+<p>Use sparse matrix for caret fit if TRUE. If NULL then
+no matrix is created and df_data is passed.</p>
+</td></tr>
+<tr valign="top"><td><code>feature_names</code></td>
+<td>
+<p>Names of features to be calculated. If NULL all
+features are used.</p>
+</td></tr>
+<tr valign="top"><td><code>b_sample</code></td>
+<td>
+<p>Named vector with priori probabilities of sampled data.</p>
+</td></tr>
+<tr valign="top"><td><code>b_all</code></td>
+<td>
+<p>Named vector with priori probabilities of all data.</p>
+</td></tr>
+<tr valign="top"><td><code>quantiles</code></td>
+<td>
+<p>Numeric vector with probs of quantiles used for metric
+feature plot points.</p>
+</td></tr>
+<tr valign="top"><td><code>verbose</code></td>
+<td>
+<p>(Logical) Show messages?</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Data frame with partial dependency infos.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+TODO
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>hmsPM</em> version 1.0.0 <a href="00Index.html">Index</a>]</div>
+</body></html>
