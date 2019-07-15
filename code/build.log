@@ -1,0 +1,528 @@
+2019/07/03 14:32:33 Downloading source code...
+2019/07/03 14:32:34 Finished downloading source code
+2019/07/03 14:32:35 Using acb_vol_7f6f85e0-0c55-4431-a74c-d2e86a0a9fe3 as the home volume
+2019/07/03 14:32:35 Creating Docker network: acb_default_network, driver: 'bridge'
+2019/07/03 14:32:35 Successfully set up Docker network: acb_default_network
+2019/07/03 14:32:35 Setting up Docker configuration...
+2019/07/03 14:32:36 Successfully set up Docker configuration
+2019/07/03 14:32:36 Logging in to registry: mlservice2042829589.azurecr.io
+2019/07/03 14:32:42 Successfully logged into mlservice2042829589.azurecr.io
+2019/07/03 14:32:42 Executing step ID: acb_step_0. Timeout(sec): 2400, Working directory: '', Network: 'acb_default_network'
+2019/07/03 14:32:42 Scanning for dependencies...
+2019/07/03 14:32:42 Successfully scanned dependencies
+2019/07/03 14:32:42 Launching container with name: acb_step_0
+Sending build context to Docker daemon  6.144kB
+Step 1/21 : FROM mcr.microsoft.com/azureml/o16n-base/python-assets:latest AS inferencing-assets
+latest: Pulling from azureml/o16n-base/python-assets
+f9890ef91499: Pulling fs layer
+f9890ef91499: Download complete
+f9890ef91499: Pull complete
+Digest: sha256:7ad51881b306f2508f682d7b210bac6152080c6d03340ecc2ed0372c03288950
+Status: Downloaded newer image for mcr.microsoft.com/azureml/o16n-base/python-assets:latest
+ ---> 0a51d33a432d
+Step 2/21 : FROM mlservice2042829589.azurecr.io/base-image:1
+1: Pulling from base-image
+9ff7e2e5f967: Already exists
+59856638ac9f: Already exists
+6f317d6d954b: Already exists
+a9dde5e2a643: Already exists
+97d8a1e95d77: Pulling fs layer
+2f2059dcfeda: Pulling fs layer
+2d607242a796: Pulling fs layer
+2432342f2079: Pulling fs layer
+8b22e3a76dba: Pulling fs layer
+c17d42ddc76c: Pulling fs layer
+e40700057eb4: Pulling fs layer
+75af2d0219fc: Pulling fs layer
+c094cdfd9964: Pulling fs layer
+be2a88a57299: Pulling fs layer
+3ec6640d3e30: Pulling fs layer
+bf66b233db4c: Pulling fs layer
+c67c54e97f5b: Pulling fs layer
+6e852366c9f4: Pulling fs layer
+94fb48b2447d: Pulling fs layer
+9d7c7e6ca56f: Pulling fs layer
+59b274e23fb7: Pulling fs layer
+92c25c4be9da: Pulling fs layer
+6aa36449e546: Pulling fs layer
+6e96f2e3d944: Pulling fs layer
+d59b9db99224: Pulling fs layer
+7d57024d4cd7: Pulling fs layer
+7c36a9e6e769: Pulling fs layer
+dfef5e47135c: Pulling fs layer
+3809021c4bd5: Pulling fs layer
+7b4fafc84804: Pulling fs layer
+a52141b7de0b: Pulling fs layer
+b5f9b59daa4d: Pulling fs layer
+2ad75cba5374: Pulling fs layer
+060fbd7ca248: Pulling fs layer
+3fe18773d084: Pulling fs layer
+ba038c43eb09: Pulling fs layer
+2432342f2079: Waiting
+8b22e3a76dba: Waiting
+c17d42ddc76c: Waiting
+e40700057eb4: Waiting
+75af2d0219fc: Waiting
+c094cdfd9964: Waiting
+be2a88a57299: Waiting
+3ec6640d3e30: Waiting
+bf66b233db4c: Waiting
+c67c54e97f5b: Waiting
+6e852366c9f4: Waiting
+94fb48b2447d: Waiting
+9d7c7e6ca56f: Waiting
+59b274e23fb7: Waiting
+92c25c4be9da: Waiting
+6aa36449e546: Waiting
+6e96f2e3d944: Waiting
+d59b9db99224: Waiting
+7d57024d4cd7: Waiting
+7c36a9e6e769: Waiting
+dfef5e47135c: Waiting
+3809021c4bd5: Waiting
+7b4fafc84804: Waiting
+a52141b7de0b: Waiting
+b5f9b59daa4d: Waiting
+2ad75cba5374: Waiting
+060fbd7ca248: Waiting
+3fe18773d084: Waiting
+ba038c43eb09: Waiting
+2f2059dcfeda: Verifying Checksum
+2f2059dcfeda: Download complete
+2d607242a796: Verifying Checksum
+2d607242a796: Download complete
+97d8a1e95d77: Verifying Checksum
+97d8a1e95d77: Download complete
+97d8a1e95d77: Pull complete
+2f2059dcfeda: Pull complete
+2d607242a796: Pull complete
+8b22e3a76dba: Verifying Checksum
+8b22e3a76dba: Download complete
+c17d42ddc76c: Verifying Checksum
+c17d42ddc76c: Download complete
+2432342f2079: Download complete
+2432342f2079: Pull complete
+8b22e3a76dba: Pull complete
+c17d42ddc76c: Pull complete
+e40700057eb4: Verifying Checksum
+e40700057eb4: Download complete
+c094cdfd9964: Verifying Checksum
+c094cdfd9964: Download complete
+e40700057eb4: Pull complete
+75af2d0219fc: Download complete
+75af2d0219fc: Pull complete
+c094cdfd9964: Pull complete
+be2a88a57299: Download complete
+be2a88a57299: Pull complete
+3ec6640d3e30: Verifying Checksum
+3ec6640d3e30: Pull complete
+bf66b233db4c: Verifying Checksum
+bf66b233db4c: Download complete
+bf66b233db4c: Pull complete
+c67c54e97f5b: Verifying Checksum
+c67c54e97f5b: Download complete
+c67c54e97f5b: Pull complete
+6e852366c9f4: Download complete
+94fb48b2447d: Verifying Checksum
+94fb48b2447d: Download complete
+6e852366c9f4: Pull complete
+94fb48b2447d: Pull complete
+9d7c7e6ca56f: Verifying Checksum
+9d7c7e6ca56f: Download complete
+9d7c7e6ca56f: Pull complete
+59b274e23fb7: Verifying Checksum
+59b274e23fb7: Download complete
+92c25c4be9da: Verifying Checksum
+92c25c4be9da: Download complete
+59b274e23fb7: Pull complete
+92c25c4be9da: Pull complete
+d59b9db99224: Verifying Checksum
+d59b9db99224: Download complete
+6aa36449e546: Verifying Checksum
+6aa36449e546: Download complete
+6aa36449e546: Pull complete
+6e96f2e3d944: Verifying Checksum
+6e96f2e3d944: Download complete
+6e96f2e3d944: Pull complete
+d59b9db99224: Pull complete
+7d57024d4cd7: Verifying Checksum
+7d57024d4cd7: Download complete
+7c36a9e6e769: Verifying Checksum
+7c36a9e6e769: Download complete
+7d57024d4cd7: Pull complete
+7c36a9e6e769: Pull complete
+dfef5e47135c: Verifying Checksum
+dfef5e47135c: Download complete
+dfef5e47135c: Pull complete
+7b4fafc84804: Verifying Checksum
+7b4fafc84804: Download complete
+3809021c4bd5: Verifying Checksum
+3809021c4bd5: Download complete
+3809021c4bd5: Pull complete
+7b4fafc84804: Pull complete
+a52141b7de0b: Verifying Checksum
+a52141b7de0b: Download complete
+2ad75cba5374: Verifying Checksum
+2ad75cba5374: Download complete
+b5f9b59daa4d: Verifying Checksum
+b5f9b59daa4d: Download complete
+a52141b7de0b: Pull complete
+060fbd7ca248: Verifying Checksum
+060fbd7ca248: Download complete
+3fe18773d084: Verifying Checksum
+3fe18773d084: Download complete
+b5f9b59daa4d: Pull complete
+ba038c43eb09: Verifying Checksum
+ba038c43eb09: Download complete
+2ad75cba5374: Pull complete
+060fbd7ca248: Pull complete
+3fe18773d084: Pull complete
+ba038c43eb09: Pull complete
+Digest: sha256:9a1e87b893a898209d96303bc27f72ee2944f64530e5594f7edbd178c0f01f10
+Status: Downloaded newer image for mlservice2042829589.azurecr.io/base-image:1
+ ---> e3362293b918
+Step 3/21 : USER root:root
+ ---> Running in 7c70c1f76f74
+Removing intermediate container 7c70c1f76f74
+ ---> 8f48e1a6869e
+Step 4/21 : ENV DEBIAN_FRONTEND=noninteractive
+ ---> Running in 80db1b48cece
+Removing intermediate container 80db1b48cece
+ ---> 915c3a13ee79
+Step 5/21 : COPY --from=inferencing-assets /artifacts /var/
+ ---> f5df1235cd8a
+Step 6/21 : RUN cp -r /var/licenses/* /
+ ---> Running in edcbf742218f
+Removing intermediate container edcbf742218f
+ ---> a4a4ab4ed77a
+Step 7/21 : RUN apt-get update -y && apt-get install -y software-properties-common && add-apt-repository -y ppa:adiscon/v8-stable && apt-get purge -y --auto-remove software-properties-common && apt-get update -y && xargs -a /var/requirements/system_requirements.txt apt-get install -y && apt-get clean -y && rm -rf /usr/share/man/* && rm -rf /var/lib/apt/lists/*
+ ---> Running in b964f1dc1705
+Hit:1 http://ppa.launchpad.net/adiscon/v8-stable/ubuntu xenial InRelease
+Get:2 http://cran.rstudio.com/bin/linux/ubuntu xenial-cran35/ InRelease [3625 B]
+Hit:3 http://archive.ubuntu.com/ubuntu xenial InRelease
+Get:4 http://security.ubuntu.com/ubuntu xenial-security InRelease [109 kB]
+Get:5 http://archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
+Get:6 http://archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]
+Fetched 329 kB in 0s (414 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  dh-python distro-info-data file gir1.2-glib-2.0 iso-codes libcurl3-gnutls
+  libdbus-glib-1-2 libgirepository-1.0-1 libmagic1 libmpdec2 libpython3-stdlib
+  libpython3.5-minimal libpython3.5-stdlib lsb-release mime-support
+  powermgmt-base python-apt-common python3 python3-apt python3-dbus python3-gi
+  python3-minimal python3-pycurl python3-software-properties python3.5
+  python3.5-minimal unattended-upgrades
+Suggested packages:
+  isoquery lsb python3-doc python3-tk python3-venv python3-apt-dbg
+  python-apt-doc python-dbus-doc python3-dbus-dbg libcurl4-gnutls-dev
+  python-pycurl-doc python3-pycurl-dbg python3.5-venv python3.5-doc
+  binfmt-support bsd-mailx default-mta | mail-transport-agent needrestart
+The following NEW packages will be installed:
+  dh-python distro-info-data file gir1.2-glib-2.0 iso-codes libcurl3-gnutls
+  libdbus-glib-1-2 libgirepository-1.0-1 libmagic1 libmpdec2 libpython3-stdlib
+  libpython3.5-minimal libpython3.5-stdlib lsb-release mime-support
+  powermgmt-base python-apt-common python3 python3-apt python3-dbus python3-gi
+  python3-minimal python3-pycurl python3-software-properties python3.5
+  python3.5-minimal software-properties-common unattended-upgrades
+0 upgraded, 28 newly installed, 0 to remove and 25 not upgraded.
+Need to get 8147 kB of archives.
+After this operation, 49.4 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libpython3.5-minimal amd64 3.5.2-2ubuntu0~16.04.5 [524 kB]
+Get:2 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 python3.5-minimal amd64 3.5.2-2ubuntu0~16.04.5 [1598 kB]
+Get:3 http://archive.ubuntu.com/ubuntu xenial/main amd64 python3-minimal amd64 3.5.1-3 [23.3 kB]
+Get:4 http://archive.ubuntu.com/ubuntu xenial/main amd64 mime-support all 3.59ubuntu1 [31.0 kB]
+Get:5 http://archive.ubuntu.com/ubuntu xenial/main amd64 libmpdec2 amd64 2.4.2-1 [82.6 kB]
+Get:6 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libpython3.5-stdlib amd64 3.5.2-2ubuntu0~16.04.5 [2134 kB]
+Get:7 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 python3.5 amd64 3.5.2-2ubuntu0~16.04.5 [165 kB]
+Get:8 http://archive.ubuntu.com/ubuntu xenial/main amd64 libpython3-stdlib amd64 3.5.1-3 [6818 B]
+Get:9 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 dh-python all 2.20151103ubuntu1.1 [74.1 kB]
+Get:10 http://archive.ubuntu.com/ubuntu xenial/main amd64 python3 amd64 3.5.1-3 [8710 B]
+Get:11 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 distro-info-data all 0.28ubuntu0.12 [4638 B]
+Get:12 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libmagic1 amd64 1:5.25-2ubuntu1.2 [216 kB]
+Get:13 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 file amd64 1:5.25-2ubuntu1.2 [21.2 kB]
+Get:14 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 lsb-release all 9.20160110ubuntu0.2 [11.8 kB]
+Get:15 http://archive.ubuntu.com/ubuntu xenial/main amd64 libgirepository-1.0-1 amd64 1.46.0-3ubuntu1 [88.3 kB]
+Get:16 http://archive.ubuntu.com/ubuntu xenial/main amd64 gir1.2-glib-2.0 amd64 1.46.0-3ubuntu1 [127 kB]
+Get:17 http://archive.ubuntu.com/ubuntu xenial/main amd64 iso-codes all 3.65-1 [2268 kB]
+Get:18 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libcurl3-gnutls amd64 7.47.0-1ubuntu2.13 [184 kB]
+Get:19 http://archive.ubuntu.com/ubuntu xenial/main amd64 libdbus-glib-1-2 amd64 0.106-1 [67.1 kB]
+Get:20 http://archive.ubuntu.com/ubuntu xenial/main amd64 powermgmt-base all 1.31+nmu1 [7178 B]
+Get:21 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 python-apt-common all 1.1.0~beta1ubuntu0.16.04.5 [16.2 kB]
+Get:22 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 python3-apt amd64 1.1.0~beta1ubuntu0.16.04.5 [138 kB]
+Get:23 http://archive.ubuntu.com/ubuntu xenial/main amd64 python3-dbus amd64 1.2.0-3 [83.1 kB]
+Get:24 http://archive.ubuntu.com/ubuntu xenial/main amd64 python3-gi amd64 3.20.0-0ubuntu1 [153 kB]
+Get:25 http://archive.ubuntu.com/ubuntu xenial/main amd64 python3-pycurl amd64 7.43.0-1ubuntu1 [42.3 kB]
+Get:26 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 python3-software-properties all 0.96.20.8 [20.2 kB]
+Get:27 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 software-properties-common all 0.96.20.8 [9440 B]
+Get:28 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 unattended-upgrades all 1.1ubuntu1.18.04.7~16.04.3 [41.4 kB]
+Preconfiguring packages ...
+Fetched 8147 kB in 0s (27.8 MB/s)
+Selecting previously unselected package libpython3.5-minimal:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 21365 files and directories currently installed.)
+Preparing to unpack .../libpython3.5-minimal_3.5.2-2ubuntu0~16.04.5_amd64.deb ...
+Unpacking libpython3.5-minimal:amd64 (3.5.2-2ubuntu0~16.04.5) ...
+Selecting previously unselected package python3.5-minimal.
+Preparing to unpack .../python3.5-minimal_3.5.2-2ubuntu0~16.04.5_amd64.deb ...
+Unpacking python3.5-minimal (3.5.2-2ubuntu0~16.04.5) ...
+Selecting previously unselected package python3-minimal.
+Preparing to unpack .../python3-minimal_3.5.1-3_amd64.deb ...
+Unpacking python3-minimal (3.5.1-3) ...
+Selecting previously unselected package mime-support.
+Preparing to unpack .../mime-support_3.59ubuntu1_all.deb ...
+Unpacking mime-support (3.59ubuntu1) ...
+Selecting previously unselected package libmpdec2:amd64.
+Preparing to unpack .../libmpdec2_2.4.2-1_amd64.deb ...
+Unpacking libmpdec2:amd64 (2.4.2-1) ...
+Selecting previously unselected package libpython3.5-stdlib:amd64.
+Preparing to unpack .../libpython3.5-stdlib_3.5.2-2ubuntu0~16.04.5_amd64.deb ...
+Unpacking libpython3.5-stdlib:amd64 (3.5.2-2ubuntu0~16.04.5) ...
+Selecting previously unselected package python3.5.
+Preparing to unpack .../python3.5_3.5.2-2ubuntu0~16.04.5_amd64.deb ...
+Unpacking python3.5 (3.5.2-2ubuntu0~16.04.5) ...
+Selecting previously unselected package libpython3-stdlib:amd64.
+Preparing to unpack .../libpython3-stdlib_3.5.1-3_amd64.deb ...
+Unpacking libpython3-stdlib:amd64 (3.5.1-3) ...
+Selecting previously unselected package dh-python.
+Preparing to unpack .../dh-python_2.20151103ubuntu1.1_all.deb ...
+Unpacking dh-python (2.20151103ubuntu1.1) ...
+Processing triggers for libc-bin (2.23-0ubuntu11) ...
+Setting up libpython3.5-minimal:amd64 (3.5.2-2ubuntu0~16.04.5) ...
+Setting up python3.5-minimal (3.5.2-2ubuntu0~16.04.5) ...
+Setting up python3-minimal (3.5.1-3) ...
+Selecting previously unselected package python3.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22306 files and directories currently installed.)
+Preparing to unpack .../python3_3.5.1-3_amd64.deb ...
+Unpacking python3 (3.5.1-3) ...
+Selecting previously unselected package distro-info-data.
+Preparing to unpack .../distro-info-data_0.28ubuntu0.12_all.deb ...
+Unpacking distro-info-data (0.28ubuntu0.12) ...
+Selecting previously unselected package libmagic1:amd64.
+Preparing to unpack .../libmagic1_1%3a5.25-2ubuntu1.2_amd64.deb ...
+Unpacking libmagic1:amd64 (1:5.25-2ubuntu1.2) ...
+Selecting previously unselected package file.
+Preparing to unpack .../file_1%3a5.25-2ubuntu1.2_amd64.deb ...
+Unpacking file (1:5.25-2ubuntu1.2) ...
+Selecting previously unselected package lsb-release.
+Preparing to unpack .../lsb-release_9.20160110ubuntu0.2_all.deb ...
+Unpacking lsb-release (9.20160110ubuntu0.2) ...
+Selecting previously unselected package libgirepository-1.0-1:amd64.
+Preparing to unpack .../libgirepository-1.0-1_1.46.0-3ubuntu1_amd64.deb ...
+Unpacking libgirepository-1.0-1:amd64 (1.46.0-3ubuntu1) ...
+Selecting previously unselected package gir1.2-glib-2.0:amd64.
+Preparing to unpack .../gir1.2-glib-2.0_1.46.0-3ubuntu1_amd64.deb ...
+Unpacking gir1.2-glib-2.0:amd64 (1.46.0-3ubuntu1) ...
+Selecting previously unselected package iso-codes.
+Preparing to unpack .../iso-codes_3.65-1_all.deb ...
+Unpacking iso-codes (3.65-1) ...
+Selecting previously unselected package libcurl3-gnutls:amd64.
+Preparing to unpack .../libcurl3-gnutls_7.47.0-1ubuntu2.13_amd64.deb ...
+Unpacking libcurl3-gnutls:amd64 (7.47.0-1ubuntu2.13) ...
+Selecting previously unselected package libdbus-glib-1-2:amd64.
+Preparing to unpack .../libdbus-glib-1-2_0.106-1_amd64.deb ...
+Unpacking libdbus-glib-1-2:amd64 (0.106-1) ...
+Selecting previously unselected package powermgmt-base.
+Preparing to unpack .../powermgmt-base_1.31+nmu1_all.deb ...
+Unpacking powermgmt-base (1.31+nmu1) ...
+Selecting previously unselected package python-apt-common.
+Preparing to unpack .../python-apt-common_1.1.0~beta1ubuntu0.16.04.5_all.deb ...
+Unpacking python-apt-common (1.1.0~beta1ubuntu0.16.04.5) ...
+Selecting previously unselected package python3-apt.
+Preparing to unpack .../python3-apt_1.1.0~beta1ubuntu0.16.04.5_amd64.deb ...
+Unpacking python3-apt (1.1.0~beta1ubuntu0.16.04.5) ...
+Selecting previously unselected package python3-dbus.
+Preparing to unpack .../python3-dbus_1.2.0-3_amd64.deb ...
+Unpacking python3-dbus (1.2.0-3) ...
+Selecting previously unselected package python3-gi.
+Preparing to unpack .../python3-gi_3.20.0-0ubuntu1_amd64.deb ...
+Unpacking python3-gi (3.20.0-0ubuntu1) ...
+Selecting previously unselected package python3-pycurl.
+Preparing to unpack .../python3-pycurl_7.43.0-1ubuntu1_amd64.deb ...
+Unpacking python3-pycurl (7.43.0-1ubuntu1) ...
+Selecting previously unselected package python3-software-properties.
+Preparing to unpack .../python3-software-properties_0.96.20.8_all.deb ...
+Unpacking python3-software-properties (0.96.20.8) ...
+Selecting previously unselected package software-properties-common.
+Preparing to unpack .../software-properties-common_0.96.20.8_all.deb ...
+Unpacking software-properties-common (0.96.20.8) ...
+Selecting previously unselected package unattended-upgrades.
+Preparing to unpack .../unattended-upgrades_1.1ubuntu1.18.04.7~16.04.3_all.deb ...
+Unpacking unattended-upgrades (1.1ubuntu1.18.04.7~16.04.3) ...
+Processing triggers for libc-bin (2.23-0ubuntu11) ...
+Processing triggers for dbus (1.10.6-1ubuntu3.3) ...
+Processing triggers for systemd (229-4ubuntu21.21) ...
+Setting up mime-support (3.59ubuntu1) ...
+Setting up libmpdec2:amd64 (2.4.2-1) ...
+Setting up libpython3.5-stdlib:amd64 (3.5.2-2ubuntu0~16.04.5) ...
+Setting up python3.5 (3.5.2-2ubuntu0~16.04.5) ...
+Setting up libpython3-stdlib:amd64 (3.5.1-3) ...
+Setting up distro-info-data (0.28ubuntu0.12) ...
+Setting up libmagic1:amd64 (1:5.25-2ubuntu1.2) ...
+Setting up file (1:5.25-2ubuntu1.2) ...
+Setting up libgirepository-1.0-1:amd64 (1.46.0-3ubuntu1) ...
+Setting up gir1.2-glib-2.0:amd64 (1.46.0-3ubuntu1) ...
+Setting up iso-codes (3.65-1) ...
+Setting up libcurl3-gnutls:amd64 (7.47.0-1ubuntu2.13) ...
+Setting up libdbus-glib-1-2:amd64 (0.106-1) ...
+Setting up powermgmt-base (1.31+nmu1) ...
+Setting up python3 (3.5.1-3) ...
+Setting up lsb-release (9.20160110ubuntu0.2) ...
+Setting up python-apt-common (1.1.0~beta1ubuntu0.16.04.5) ...
+Setting up python3-apt (1.1.0~beta1ubuntu0.16.04.5) ...
+Setting up python3-dbus (1.2.0-3) ...
+Setting up python3-gi (3.20.0-0ubuntu1) ...
+Setting up python3-pycurl (7.43.0-1ubuntu1) ...
+Setting up python3-software-properties (0.96.20.8) ...
+Setting up software-properties-common (0.96.20.8) ...
+Setting up unattended-upgrades (1.1ubuntu1.18.04.7~16.04.3) ...
+
+Creating config file /etc/apt/apt.conf.d/20auto-upgrades with new version
+
+Creating config file /etc/apt/apt.conf.d/50unattended-upgrades with new version
+Setting up dh-python (2.20151103ubuntu1.1) ...
+Processing triggers for libc-bin (2.23-0ubuntu11) ...
+Processing triggers for dbus (1.10.6-1ubuntu3.3) ...
+Processing triggers for systemd (229-4ubuntu21.21) ...
+[91mgpg: keyring `/tmp/tmpxhdjriky/secring.gpg' created
+[0m[91mgpg: keyring `/tmp/tmpxhdjriky/pubring.gpg' created
+[0m[91mgpg: requesting key 5234BF2B from hkp server keyserver.ubuntu.com
+[0m[91mgpg: /tmp/tmpxhdjriky/trustdb.gpg: trustdb created
+[0m[91mgpg: key 5234BF2B: public key "Launchpad PPA for Adiscon" imported
+gpg: Total number processed: 1
+gpg:               imported: 1  (RSA: 1)
+[0mOK
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages will be REMOVED:
+  dh-python* distro-info-data* file* gir1.2-glib-2.0* iso-codes*
+  libcurl3-gnutls* libdbus-glib-1-2* libgirepository-1.0-1* libmagic1*
+  libmpdec2* libpython3-stdlib* libpython3.5-minimal* libpython3.5-stdlib*
+  lsb-release* mime-support* powermgmt-base* python-apt-common* python3*
+  python3-apt* python3-dbus* python3-gi* python3-minimal* python3-pycurl*
+  python3-software-properties* python3.5* python3.5-minimal*
+  software-properties-common* unattended-upgrades*
+0 upgraded, 0 newly installed, 28 to remove and 25 not upgraded.
+After this operation, 49.4 MB disk space will be freed.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 23054 files and directories currently installed.)
+Removing unattended-upgrades (1.1ubuntu1.18.04.7~16.04.3) ...
+Purging configuration files for unattended-upgrades (1.1ubuntu1.18.04.7~16.04.3) ...
+Removing software-properties-common (0.96.20.8) ...
+Purging configuration files for software-properties-common (0.96.20.8) ...
+Removing python3-software-properties (0.96.20.8) ...
+Removing lsb-release (9.20160110ubuntu0.2) ...
+Purging configuration files for lsb-release (9.20160110ubuntu0.2) ...
+Removing python3-apt (1.1.0~beta1ubuntu0.16.04.5) ...
+Removing distro-info-data (0.28ubuntu0.12) ...
+Removing file (1:5.25-2ubuntu1.2) ...
+Removing python3-gi (3.20.0-0ubuntu1) ...
+Removing gir1.2-glib-2.0:amd64 (1.46.0-3ubuntu1) ...
+Removing iso-codes (3.65-1) ...
+Removing python3-pycurl (7.43.0-1ubuntu1) ...
+Removing libcurl3-gnutls:amd64 (7.47.0-1ubuntu2.13) ...
+Removing python3-dbus (1.2.0-3) ...
+Removing libdbus-glib-1-2:amd64 (0.106-1) ...
+Removing libgirepository-1.0-1:amd64 (1.46.0-3ubuntu1) ...
+Removing libmagic1:amd64 (1:5.25-2ubuntu1.2) ...
+Purging configuration files for libmagic1:amd64 (1:5.25-2ubuntu1.2) ...
+Removing powermgmt-base (1.31+nmu1) ...
+Removing python-apt-common (1.1.0~beta1ubuntu0.16.04.5) ...
+Removing dh-python (2.20151103ubuntu1.1) ...
+Removing python3 (3.5.1-3) ...
+Purging configuration files for python3 (3.5.1-3) ...
+Removing python3.5 (3.5.2-2ubuntu0~16.04.5) ...
+Removing libpython3-stdlib:amd64 (3.5.1-3) ...
+Removing libpython3.5-stdlib:amd64 (3.5.2-2ubuntu0~16.04.5) ...
+Removing libmpdec2:amd64 (2.4.2-1) ...
+Removing python3-minimal (3.5.1-3) ...
+Removing python3.5-minimal (3.5.2-2ubuntu0~16.04.5) ...
+Purging configuration files for python3.5-minimal (3.5.2-2ubuntu0~16.04.5) ...
+Removing libpython3.5-minimal:amd64 (3.5.2-2ubuntu0~16.04.5) ...
+Purging configuration files for libpython3.5-minimal:amd64 (3.5.2-2ubuntu0~16.04.5) ...
+Removing mime-support (3.59ubuntu1) ...
+Purging configuration files for mime-support (3.59ubuntu1) ...
+Processing triggers for dbus (1.10.6-1ubuntu3.3) ...
+Processing triggers for libc-bin (2.23-0ubuntu11) ...
+Hit:1 http://archive.ubuntu.com/ubuntu xenial InRelease
+Get:2 http://security.ubuntu.com/ubuntu xenial-security InRelease [109 kB]
+Hit:3 http://cran.rstudio.com/bin/linux/ubuntu xenial-cran35/ InRelease
+Hit:4 http://ppa.launchpad.net/adiscon/v8-stable/ubuntu xenial InRelease
+Get:5 http://archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
+Get:6 http://archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]
+Fetched 325 kB in 0s (615 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+libunwind8 is already the newest version (1.1-4.1).
+psmisc is already the newest version (22.21-2.1build1).
+unzip is already the newest version (6.0-20ubuntu1).
+liblttng-ust0 is already the newest version (2.7.1-1).
+libxml++2.6-2v5 is already the newest version (2.40.1-1).
+runit is already the newest version (2.1.2-3ubuntu1).
+libcurl3 is already the newest version (7.47.0-1ubuntu2.13).
+wget is already the newest version (1.17.1-1ubuntu1.5).
+nginx-light is already the newest version (1.10.3-0ubuntu0.16.04.3).
+Suggested packages:
+  rsyslog-mysql | rsyslog-pgsql rsyslog-doc rsyslog-relp rsyslog-elasticsearch
+  rsyslog-mmjsonparse rsyslog-imptcp rsyslog-gnutls rsyslog-openssl
+  rsyslog-udpspoof rsyslog-mmrm1stspace rsyslog-mmutf8fix rsyslog-kafka
+  rsyslog-omstdout apparmor
+The following packages will be upgraded:
+  rsyslog
+1 upgraded, 0 newly installed, 0 to remove and 24 not upgraded.
+Need to get 637 kB of archives.
+After this operation, 11.3 kB of additional disk space will be used.
+Get:1 http://ppa.launchpad.net/adiscon/v8-stable/ubuntu xenial/main amd64 rsyslog amd64 8.1905.0-0adiscon2xenial1 [637 kB]
+Fetched 637 kB in 0s (4090 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 21365 files and directories currently installed.)
+Preparing to unpack .../rsyslog_8.1905.0-0adiscon2xenial1_amd64.deb ...
+Unpacking rsyslog (8.1905.0-0adiscon2xenial1) over (8.1904.0-0adiscon1xenial1) ...
+Processing triggers for systemd (229-4ubuntu21.21) ...
+Setting up rsyslog (8.1905.0-0adiscon2xenial1) ...
+invoke-rc.d: could not determine current runlevel
+invoke-rc.d: policy-rc.d denied execution of restart.
+Removing intermediate container b964f1dc1705
+ ---> 70fe0436470e
+Step 8/21 : RUN pip install --no-cache-dir -r /var/requirements/python_requirements.txt && find / -type d -name __pycache__ -prune -exec rm -rf {} \;
+ ---> Running in 873c99912da6
+Requirement already satisfied: applicationinsights==0.11.7 in /opt/miniconda/lib/python3.6/site-packages (from -r /var/requirements/python_requirements.txt (line 1)) (0.11.7)
+Requirement already satisfied: azure-ml-api-sdk==0.1.0a5 in /opt/miniconda/lib/python3.6/site-packages (from -r /var/requirements/python_requirements.txt (line 2)) (0.1.0a5)
+Requirement already satisfied: configparser==3.5.0 in /opt/miniconda/lib/python3.6/site-packages (from -r /var/requirements/python_requirements.txt (line 3)) (3.5.0)
+Requirement already satisfied: flask==0.12.4 in /opt/miniconda/lib/python3.6/site-packages (from -r /var/requirements/python_requirements.txt (line 4)) (0.12.4)
+Requirement already satisfied: gunicorn==19.6.0 in /opt/miniconda/lib/python3.6/site-packages (from -r /var/requirements/python_requirements.txt (line 5)) (19.6.0)
+Collecting json-logging-py==0.2 (from -r /var/requirements/python_requirements.txt (line 6))
+  Downloading https://files.pythonhosted.org/packages/e9/e1/46c70eebf216b830867c4896ee678cb7f1b28bb68a2810c7e9a811cecfbc/json-logging-py-0.2.tar.gz
+Requirement already satisfied: requests==2.21.0 in /opt/miniconda/lib/python3.6/site-packages (from -r /var/requirements/python_requirements.txt (line 7)) (2.21.0)
+Requirement already satisfied: pytz in /opt/miniconda/lib/python3.6/site-packages (from azure-ml-api-sdk==0.1.0a5->-r /var/requirements/python_requirements.txt (line 2)) (2019.1)
+Requirement already satisfied: liac-arff in /opt/miniconda/lib/python3.6/site-packages (from azure-ml-api-sdk==0.1.0a5->-r /var/requirements/python_requirements.txt (line 2)) (2.4.0)
+Requirement already satisfied: python-dateutil in /opt/miniconda/lib/python3.6/site-packages (from azure-ml-api-sdk==0.1.0a5->-r /var/requirements/python_requirements.txt (line 2)) (2.8.0)
+Requirement already satisfied: Werkzeug>=0.7 in /opt/miniconda/lib/python3.6/site-packages (from flask==0.12.4->-r /var/requirements/python_requirements.txt (line 4)) (0.15.4)
+Requirement already satisfied: itsdangerous>=0.21 in /opt/miniconda/lib/python3.6/site-packages (from flask==0.12.4->-r /var/requirements/python_requirements.txt (line 4)) (1.1.0)
+Requirement already satisfied: click>=2.0 in /opt/miniconda/lib/python3.6/site-packages (from flask==0.12.4->-r /var/requirements/python_requirements.txt (line 4)) (7.0)
+Requirement already satisfied: Jinja2>=2.4 in /opt/miniconda/lib/python3.6/site-packages (from flask==0.12.4->-r /var/requirements/python_requirements.txt (line 4)) (2.10.1)
+Requirement already satisfied: certifi>=2017.4.17 in /opt/miniconda/lib/python3.6/site-packages (from requests==2.21.0->-r /var/requirements/python_requirements.txt (line 7)) (2019.6.16)
+Requirement already satisfied: idna<2.9,>=2.5 in /opt/miniconda/lib/python3.6/site-packages (from requests==2.21.0->-r /var/requirements/python_requirements.txt (line 7)) (2.8)
+Requirement already satisfied: urllib3<1.25,>=1.21.1 in /opt/miniconda/lib/python3.6/site-packages (from requests==2.21.0->-r /var/requirements/python_requirements.txt (line 7)) (1.24.2)
+Requirement already satisfied: chardet<3.1.0,>=3.0.2 in /opt/miniconda/lib/python3.6/site-packages (from requests==2.21.0->-r /var/requirements/python_requirements.txt (line 7)) (3.0.4)
+Requirement already satisfied: six>=1.5 in /opt/miniconda/lib/python3.6/site-packages (from python-dateutil->azure-ml-api-sdk==0.1.0a5->-r /var/requirements/python_requirements.txt (line 2)) (1.12.0)
+Requirement already satisfied: MarkupSafe>=0.23 in /opt/miniconda/lib/python3.6/site-packages (from Jinja2>=2.4->flask==0.12.4->-r /var/requirements/python_requirements.txt (line 4)) (1.1.1)
+Building wheels for collected packages: json-logging-py
+  Building wheel for json-logging-py (setup.py): started
+  Building wheel for json-logging-py (setup.py): finished with status 'done'
+  Stored in directory: /tmp/pip-ephem-wheel-cache-p_9g375l/wheels/0d/2e/1c/c638b7589610d8b9358a6e5eb008edacb8b3e9b6d1edc9479f
+Successfully built json-logging-py
+Installing collected packages: json-logging-py
+Successfully installed json-logging-py-0.2
+Removing intermediate container 873c99912da6
+ ---> 63d8ac22eb36
+Step 9/21 : RUN cp /var/configuration/rsyslog.conf /etc/rsyslog.conf && cp /var/configuration/nginx.conf /etc/nginx/sites-available/app && ln -s /etc/nginx/sites-available/app /etc/nginx/sites-enabled/app && rm -f /etc/nginx/sites-enabled/default
+ ---> Running in f93413d45bb3
+[91mln: failed to create symbolic link '/etc/nginx/sites-enabled/app': File exists
+[0mThe command '/bin/sh -c cp /var/configuration/rsyslog.conf /etc/rsyslog.conf && cp /var/configuration/nginx.conf /etc/nginx/sites-available/app && ln -s /etc/nginx/sites-available/app /etc/nginx/sites-enabled/app && rm -f /etc/nginx/sites-enabled/default' returned a non-zero code: 1
+2019/07/03 14:35:42 Container failed during run: acb_step_0. No retries remaining.
+failed to run step ID: acb_step_0: exit status 1
+
+Run ID: cbx failed after 3m10s. Error: failed during run, err: exit status 1
