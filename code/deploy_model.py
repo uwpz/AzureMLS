@@ -17,8 +17,8 @@ for m in l_models:
 model = l_models[0]
 
 
-# --- Create container -----------------------------------------------------------------------------------
-# Define container contents
+# --- Create image -----------------------------------------------------------------------------------
+# Define image contents
 env = CondaDependencies()
 if backend == "python":
     env.add_conda_package("pandas")
@@ -33,7 +33,7 @@ print(env.serialize_to_string())
 
 '''
 # DOES NOT WORK
-# Create Basis container
+# Create Basis image
 tmp = os.getcwd()
 try:
     os.chdir(tmp + "/code")
